@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import "../styles/PreBook.css";
+import "../styles/PreBook.css";
 
 function PreBook() {
   const navigate = useNavigate();

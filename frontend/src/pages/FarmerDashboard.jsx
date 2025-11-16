@@ -44,7 +44,7 @@ function FarmerDashboard() {
             <span className="card-icon">🌱</span>
             <span className="card-text">{t("add_crop_residue")}</span>
           </div>
-          <div className="dashboard-card">
+          <div className="dashboard-card"  onClick={() => navigate("/sales")}>
             <span className="card-icon">🔔</span>
             <span className="card-text">{t("sales")}</span>
           </div>

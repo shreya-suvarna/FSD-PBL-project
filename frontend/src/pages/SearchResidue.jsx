@@ -1,7 +1,7 @@
 // src/pages/SearchResidue.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import "../styles/SearchResidue.css";
+import "../styles/SearchResidue.css";
 
 function SearchResidue() {
   const [residues, setResidues] = useState([]);
