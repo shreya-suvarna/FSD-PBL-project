@@ -13,6 +13,11 @@ import Sales from "./pages/Sales";
 import Alerts from "./pages/Alerts";
 import Payments from "./pages/Payments";
 import GovernmentSchemes from "./pages/GovernmentSchemes";
+import SearchResidue from "./pages/SearchResidue";
+import PreBook from "./pages/PreBook";
+import IndustryAlerts from "./pages/IndustryAlerts.jsx";
+import IndustryPayments from "./pages/IndustryPayments";
+
 
 function App() {
   return (
@@ -30,7 +35,13 @@ function App() {
       <Route path="/alerts" element={<Alerts />} />
       <Route path="/payments" element={<Payments />} />
       <Route path="/government-schemes" element={<GovernmentSchemes />} />
+       <Route path="/search-residue" element={<SearchResidue />} />
+        <Route path="/pre-book" element={<PreBook />} />
+        <Route path="/industry-alerts" element={<IndustryAlerts />} />
+        <Route path="/industry-payments" element={<IndustryPayments />} />
+      
       </Routes>
+      
     // <p>hello</p>
   );
 }

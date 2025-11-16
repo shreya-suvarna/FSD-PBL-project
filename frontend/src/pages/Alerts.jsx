@@ -4,7 +4,6 @@ import "../styles/Alerts.css";
 function Alerts() {
   const [alerts, setAlerts] = useState([]);
 
-  // Load alerts from localStorage or mock data
   useEffect(() => {
     const storedAlerts = JSON.parse(localStorage.getItem("alerts") || "[]");
     setAlerts(storedAlerts);
