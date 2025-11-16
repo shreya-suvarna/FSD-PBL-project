@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import "../styles/Welcome.css"
+import farmerImg from "../assets/farmer_illustration.png";
 
 function Welcome() {
   const { t, language, setLanguage } = useLanguage();
@@ -54,7 +55,7 @@ function Welcome() {
         </div>
 
         <div className="illustration-area">
-          <img src="/src/assets/farmer_illustration.png" alt="Farmer illustration" />
+          <img src={farmerImg} alt="Farmer illustration" />
         </div>
       </div>
     </div>

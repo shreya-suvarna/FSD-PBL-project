@@ -17,22 +17,18 @@
 }
 
 body {
-    background-color: #e8f5e9;;
+    background-color: var(--body-frame-color);
     color: var(--text-dark);
     line-height: 1.6;
-    padding: 30px;
-    width: 100vw;
-    height: 100vh;
+    padding: 20px;
 }
 
 .dashboard-container {
-    padding: 50px;
-    width:100%;
+    width: 100%;
     max-width: 1900px;
     margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    min-height: 90vh;
 }
 
 /* Header */
@@ -44,7 +40,7 @@ body {
 }
 
 .logo-container {
-    font-size: 50px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--primary-color);
 }
@@ -52,7 +48,6 @@ body {
 .nav-links {
     display: flex;
     gap: 30px;
-    margin-left: 50px;
 }
 
 .nav-link {
@@ -66,16 +61,16 @@ body {
     align-items: center;
     gap: 15px;
 }
-.auth-controls select {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-weight: 500;
-  cursor: pointer;
+
+.lang-dropdown select {
+    padding: 6px 12px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid #ddd;
+    background-color: white;
+    color: var(--text-dark);
 }
 
-
-.login-btn {
+.logout-btn {
     padding: 8px 20px;
     border-radius: var(--border-radius-sm);
     background-color: var(--primary-color);
@@ -84,79 +79,70 @@ body {
     text-decoration: none;
 }
 
-/* Hero Section */
-.hero-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 50px;
-}
-
-.hero-text {
-    flex-basis: 55%;
-}
-
+/* Dashboard Content */
 .dashboard-title {
-    font-size: 70px;
+    font-size: 42px;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
-.subtitle {
-    font-size: 25px;
-    color: var(--text-light);
-    max-width: 500px;
-    margin-bottom: 50px;
+/* Main Content: Cards + Illustration */
+.main-content-dashboard {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-.get-started-btn {
-     background-color: var(--primary-color);
-    color: white;
-    padding: 12px 30px;
-    border-radius: var(--border-radius-sm);
-    font-size: 25px;
-    font-weight: 600;
-    text-decoration: none;
-    display: block;
-    margin: 20px auto 0 auto; /* adds 20px space above button */
-    width: fit-content;
-}
-
-/* Feature Cards */
-.feature-grid {
+/* Grid for cards */
+.dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-auto-rows: auto;                  /* rows adjust automatically */
     gap: 30px;
+    flex: 2;                               /* takes 2 parts of space next to illustration */
+    min-width: 400px;
 }
 
-.feature-card {
-    background-color: var(--background-color);
-    padding: 30px 15px;
+/* Individual Card */
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     border-radius: var(--border-radius-lg);
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.feature-card:hover {
+.dashboard-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.card-icon {
+.dashboard-card .card-icon {
     font-size: 40px;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.card-text {
-    font-size: 16px;
+.dashboard-card .card-text {
+    font-size: 18px;
     font-weight: 600;
     color: var(--text-dark);
+    text-align: center;
 }
 
 /* Illustration */
+.illustration-area {
+    flex: 1;            /* takes 1 part of space next to grid */
+    min-width: 400px;
+    text-align: right;
+}
+
 .illustration-area img {
     max-width: 100%;
     height: auto;

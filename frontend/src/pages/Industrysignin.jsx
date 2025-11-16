@@ -18,7 +18,7 @@ function Industrysignin() {
     e.preventDefault();
 
     if (form.login && form.password) {
-      navigate("/industry/dashboard");
+      navigate("/industry-dashboard");
     } else {
       alert("Please enter email and password");
     }
@@ -67,7 +67,7 @@ function Industrysignin() {
           <div className="auth-links">
              <p>
               Don't have an account?{" "}
-              <Link to="/Industry-signup" className="auth-link">Sign up</Link>
+              <Link to="/industry-signup" className="auth-link">Sign up</Link>
             </p>
             <Link to="/login-selection" className="back-link">
               ← Back to Login Selection

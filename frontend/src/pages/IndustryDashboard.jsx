@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/FarmerDashboard.css";
+import "../styles/IndustryDashboard.css";
+import industryImg from "../assets/industry_illustration.png";
 
-function FarmerDashboard() {
+function IndustryDashboard() {
   return (
     <div className="dashboard-container">
       <header className="header">
@@ -30,37 +31,30 @@ function FarmerDashboard() {
 
       <div className="main-content-dashboard">
         <div className="dashboard-grid">
-          <div className="dashboard-card" onClick={() => alert("Add Crop Residue")}>
-            <span className="card-icon">🌱</span>
-            <span className="card-text">Add Crop Residue</span>
+          <div className="dashboard-card" onClick={() => alert("Search Residue")}>
+            <span className="card-icon">🔍</span>
+            <span className="card-text">Search Residue</span>
           </div>
-          <div className="dashboard-card">
+          <div className="dashboard-card" onClick={() => alert("Pre-Book")}>
+            <span className="card-icon">🗓️</span>
+            <span className="card-text">Pre-Book</span>
+          </div>
+          <div className="dashboard-card" onClick={() => alert("Alerts")}>
             <span className="card-icon">🔔</span>
-            <span className="card-text">Sales</span>
-          </div>
-          <div className="dashboard-card">
-            <span className="card-icon">📢</span>
             <span className="card-text">Alerts</span>
           </div>
-          <div className="dashboard-card">
-            <span className="card-icon">₹</span>
+          <div className="dashboard-card" onClick={() => alert("Payments")}>
+            <span className="card-icon">💲</span>
             <span className="card-text">Payments</span>
-          </div>
-          <div className="dashboard-card" onClick={() => alert("Govt Schemes")}>
-            <span className="card-icon">🏛️</span>
-            <span className="card-text">Government Schemes</span>
           </div>
         </div>
 
         <div className="illustration-area">
-          <img
-            src="/src/assets/farmer_illustration.png"
-            alt="Farmer illustration"
-          />
+          <img src={industryImg} alt="Industry illustration" />
         </div>
       </div>
     </div>
   );
 }
 
-export default FarmerDashboard;
+export default IndustryDashboard;
