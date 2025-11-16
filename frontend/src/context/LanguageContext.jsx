@@ -69,7 +69,12 @@ phoneNumber: "Phone Number",
 phonePlaceholder: "Enter company phone number",
 companyAddress: "Company Address",
 companyAddressPlaceholder: "Enter company address",
-enterValidPhone: "Enter a valid 10-digit phone number"
+enterValidPhone: "Enter a valid 10-digit phone number",
+searchResidue: "Search Residue",
+preBook: "Pre-Book",
+industryIllustration: "Industry illustration",
+logout: "Logout"
+
 
 
 
@@ -145,7 +150,12 @@ phoneNumber: "ದೂರವಾಣಿ ಸಂಖ್ಯೆ",
 phonePlaceholder: "ಕಂಪನಿಯ ದೂರವಾಣಿ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
 companyAddress: "ಕಂಪನಿ ವಿಳಾಸ",
 companyAddressPlaceholder: "ಕಂಪನಿ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ",
-enterValidPhone: "ದಯವಿಟ್ಟು ಮಾನ್ಯ 10-ಅಂಕಿಯ ಫೋನ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ"
+enterValidPhone: "ದಯವಿಟ್ಟು ಮಾನ್ಯ 10-ಅಂಕಿಯ ಫೋನ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+searchResidue: "ಅವಶೇಷ ಹುಡುಕಿ",
+preBook: "ಮುಂಗಡ ಬುಕ್",
+industryIllustration: "ಕೈಗಾರಿಕಾ ಚಿತ್ರಣ",
+logout: "ಲಾಗ್ ಔಟ್"
+
 
 
 
