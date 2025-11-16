@@ -13,6 +13,7 @@ import Sales from "./pages/Sales";
 import Alerts from "./pages/Alerts";
 import Payments from "./pages/Payments";
 import GovernmentSchemes from "./pages/GovernmentSchemes";
+import SearchResidue from "./pages/SearchResidue";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path="/alerts" element={<Alerts />} />
       <Route path="/payments" element={<Payments />} />
       <Route path="/government-schemes" element={<GovernmentSchemes />} />
+      <Route path="/search-residue" element={<SearchResidue/>}/>
       </Routes>
     // <p>hello</p>
   );

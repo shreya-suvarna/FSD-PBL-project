@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/IndustryDashboard.css";
 import industryImg from "../assets/industry_illustration.png";
 
 function IndustryDashboard() {
+  const navigate = useNavigate();
+  
   return (
     <div className="dashboard-container">
       <header className="header">
@@ -31,7 +33,7 @@ function IndustryDashboard() {
 
       <div className="main-content-dashboard">
         <div className="dashboard-grid">
-          <div className="dashboard-card" onClick={() => alert("Search Residue")}>
+          <div className="dashboard-card" onClick={() => navigate("/search-residue")}>
             <span className="card-icon">🔍</span>
             <span className="card-text">Search Residue</span>
           </div>
