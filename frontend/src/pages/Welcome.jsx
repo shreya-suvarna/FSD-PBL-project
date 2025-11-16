@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import "../styles/Welcome.css"
+import "../styles/Welcome.css";
 
 function Welcome() {
   const { t, language, setLanguage } = useLanguage();
@@ -10,14 +10,18 @@ function Welcome() {
   return (
     <div className="dashboard-container">
       <header className="header">
-        <div className="logo-container">🌱 Green Kisan</div>
+        <div className="logo-container">🌱 {t("title")}</div>
+
         <nav className="nav-links">
-          <Link to="/" className="nav-link" data-translate="home">Home</Link>
-          <Link to="/login-selection" className="nav-link" data-translate="dashboardTitle">My Dashboard</Link>
-          <a href="#" className="nav-link" data-translate="aboutUs">About Us</a>
-          <a href="#" className="nav-link" data-translate="alerts">Alerts</a>
-          <a href="#" className="nav-link" data-translate="settings">Settings</a>
+          <Link to="/" className="nav-link">{t("home")}</Link>
+          <Link to="/login-selection" className="nav-link">
+            {t("dashboard_title")}
+          </Link>
+          <a href="#" className="nav-link">{t("aboutUs") ?? "About Us"}</a>
+          <a href="#" className="nav-link">{t("alerts")}</a>
+          <a href="#" className="nav-link">{t("settings") ?? "Settings"}</a>
         </nav>
+
         <div className="auth-controls">
           <div className="lang-dropdown">
             <select
@@ -28,33 +32,31 @@ function Welcome() {
               <option value="kn">ಕನ್ನಡ</option>
             </select>
           </div>
-          <Link to="/login-selection" className="login-btn" data-translate="login">
-            Login
+          <Link to="/login-selection" className="login-btn">
+            {t("login") ?? "Login"}
           </Link>
         </div>
       </header>
 
       <div className="hero-section">
         <div className="hero-text">
-          <h1 data-translate="title" className="dashboard-title">
-            Welcome to Green Kisan
-          </h1>
-          <p className="subtitle" data-translate="subtitle">
-            A platform connecting farmers with industries for sustainable crop residue management
-          </p>
+          <h1 className="dashboard-title">{t("title")}</h1>
 
-        
+          <p className="subtitle">{t("subtitle")}</p>
+
           <button
             className="get-started-btn"
-            data-translate="getStarted"
             onClick={() => navigate("/login-selection")}
           >
-            Get Started
+            {t("getStarted") ?? "Get Started"}
           </button>
         </div>
 
         <div className="illustration-area">
-          <img src="/src/assets/farmer_illustration.png" alt="Farmer illustration" />
+          <img
+            src="/src/assets/farmer_illustration.png"
+            alt={t("farmer_illustration_alt")}
+          />
         </div>
       </div>
     </div>

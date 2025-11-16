@@ -1,55 +1,87 @@
+// src/context/LanguageContext.jsx
 import React, { createContext, useState, useEffect, useContext } from "react";
 
-// --- Translations (same as your old weltranslate.js) ---
 const translations = {
   en: {
     home: "Home",
-    aboutUs: "About Us",
-    alerts: "Alerts",
-    settings: "Settings",
-    login: "Login",
     title: "Welcome to Green Kisan",
-    subtitle: "A platform connecting farmers with industries for sustainable crop residue management",
-    getStarted: "Get Started",
-    chooseLogin: "Choose Your Login Type",
-    farmerLogin: "Farmer Login",
-    industryLogin: "Industry Login",
-    uploadResidue: "Upload crop residue for sale.",
-    buyResidue: "Purchase crop residue.",
-    contact: "Contact",
+    subtitle:
+      "A platform connecting farmers with industries for sustainable crop residue management",
+
+    dashboard_title: "My Dashboard",
+    add_crop_residue: "Add Crop Residue",
+    sales: "Sales",
+    alerts: "Alerts",
+    payments: "Payments",
+    govt_schemes: "Government Schemes",
+    farmer_illustration_alt: "Farmer illustration",
+    aboutUs: "About Us",
+settings: "Settings",
+login: "Login",
+getStarted: "Get Started",
+aboutUs: "About Us",
+contact: "Contact",
+chooseLogin: "Choose Your Login Type",
+chooseLoginSubtitle: "Please select whether you are a Farmer or an Industry representative.",
+farmerLogin: "Farmer Login",
+industryLogin: "Industry Login",
+uploadResidue: "Upload crop residue for sale.",
+buyResidue: "Purchase crop residue.",
+
+
   },
+
   kn: {
     home: "ಮುಖಪುಟ",
-    aboutUs: "ನಮ್ಮ ಬಗ್ಗೆ",
-    alerts: "ಎಚ್ಚರಿಕೆಗಳು",
-    settings: "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
-    login: "ಲಾಗಿನ್",
     title: "ಗ್ರೀನ್ ಕಿಸಾನ್‌ಗೆ ಸ್ವಾಗತ",
-    subtitle: "ಸ್ಥಿರ ಬೆಳೆ ಅವಶೇಷ ನಿರ್ವಹಣೆಗೆ ರೈತರನ್ನು ಕೈಗಾರಿಕೆಗಳೊಂದಿಗೆ ಸಂಪರ್ಕಿಸುವ ವೇದಿಕೆ",
-    getStarted: "ಪ್ರಾರಂಭಿಸಿ",
-    chooseLogin: "ನಿಮ್ಮ ಲಾಗಿನ್ ಪ್ರಕಾರ ಆಯ್ಕೆಮಾಡಿ",
-    farmerLogin: "ರೈತ ಲಾಗಿನ್",
-    industryLogin: "ಕೈಗಾರಿಕಾ ಲಾಗಿನ್",
-    uploadResidue: "ಮಾರಾಟಕ್ಕಾಗಿ ಬೆಳೆ ಉಳಿಕೆ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.",
-    buyResidue: "ಬೆಳೆ ಉಳಿಕೆ ಖರೀದಿಸಿ.",
-    contact: "ಸಂಪರ್ಕ",
+    subtitle:
+      "ಸ್ಥಿರ ಬೆಳೆ ಅವಶೇಷ ನಿರ್ವಹಣೆಗೆ ರೈತರನ್ನು ಕೈಗಾರಿಕೆಗಳೊಂದಿಗೆ ಸಂಪರ್ಕಿಸುವ ವೇದಿಕೆ",
+
+    dashboard_title: "ನನ್ನ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    add_crop_residue: "ಬೆಳೆ ಅವಶೇಷ ಸೇರಿಸಿ",
+    sales: "ಮಾರಾಟ",
+    alerts: "ಎಚ್ಚರಿಕೆಗಳು",
+    payments: "ಪಾವತಿಗಳು",
+    govt_schemes: "ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು",
+    farmer_illustration_alt: "ರೈತ ಚಿತ್ರಣ",
+    aboutUs: "ನಮ್ಮ ಬಗ್ಗೆ",
+settings: "ಸಂಯೆಾಜನೆಗಳು",
+login: "ಲಾಗಿನ್",
+getStarted: "ಪ್ರಾರಂಭಿಸಿ",
+aboutUs: "ನಮ್ಮ ಬಗ್ಗೆ",
+contact: "ಸಂಪರ್ಕಿಸಿ",
+chooseLogin: "ಲಾಗಿನ್ ವಿಧವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+chooseLoginSubtitle: "ದಯವಿಟ್ಟು ನೀವು ರೈತರೇ ಅಥವಾ ಕೈಗಾರಿಕೆಯ ಪ್ರತಿನಿಧಿಯೋ ಆಯ್ಕೆಮಾಡಿ.",
+farmerLogin: "ರೈತರ ಲಾಗಿನ್",
+industryLogin: "ಕೈಗಾರಿಕಾ ಲಾಗಿನ್",
+uploadResidue: "ಮಾರಾಟಕ್ಕಾಗಿ ಬೆಳೆ ಅವಶೇಷಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.",
+buyResidue: "ಬೆಳೆ ಅವಶೇಷಗಳನ್ನು ಖರೀದಿಸಿ.",
+
+
   },
 };
 
-// --- Create Context ---
 const LanguageContext = createContext();
 
-// --- Provider Component ---
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState(localStorage.getItem("language") || "en");
+  const [language, setLanguage] = useState(() => {
+    try {
+      return localStorage.getItem("language") || "en";
+    } catch {
+      return "en";
+    }
+  });
 
-  // Save language preference
   useEffect(() => {
-    localStorage.setItem("language", language);
+    try {
+      localStorage.setItem("language", language);
+    } catch {}
+    console.log("[LanguageProvider] language ->", language);
   }, [language]);
 
-  // Translation function
-  const t = (key) => translations[language][key] || key;
+  const t = (key) => {
+    return translations?.[language]?.[key] ?? key;
+  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
@@ -58,5 +90,12 @@ export const LanguageProvider = ({ children }) => {
   );
 };
 
-// --- Custom Hook for easy use ---
-export const useLanguage = () => useContext(LanguageContext);
+export const useLanguage = () => {
+  const ctx = useContext(LanguageContext);
+  if (!ctx) {
+    throw new Error("useLanguage must be used within LanguageProvider");
+  }
+  return ctx;
+};
+
+export default LanguageContext;
