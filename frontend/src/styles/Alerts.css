@@ -1,0 +1,61 @@
+.alerts-container {
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.alerts-title {
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.btn-mark-all {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.btn-mark-all:hover {
+  background-color: #66bb6a;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.alert-card {
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.alert-card:hover {
+  transform: translateY(-2px);
+}
+
+.alert-card.unread {
+  border-left: 5px solid var(--primary-color);
+  background-color: #f0fff0;
+}
+
+.alert-card.read {
+  opacity: 0.7;
+}
+
+.alert-date {
+  font-size: 12px;
+  color: var(--text-light);
+  display: block;
+  margin-top: 8px;
+}

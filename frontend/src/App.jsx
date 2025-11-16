@@ -8,6 +8,11 @@ import FarmerDashboard from './pages/FarmerDashboard';
 import Industrysignin from "./pages/Industrysignin";
 import Industrysignup from './pages/Industrysignup';
 import IndustryDashboard from './pages/IndustryDashboard';
+import AddCropResidue from "./pages/AddCropResidue";
+import Sales from "./pages/Sales";
+import Alerts from "./pages/Alerts";
+import Payments from "./pages/Payments";
+import GovernmentSchemes from "./pages/GovernmentSchemes";
 
 function App() {
   return (
@@ -20,7 +25,12 @@ function App() {
       <Route path="/Industry-signup" element={<Industrysignup />} />
       <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
       <Route path="/industry-dashboard" element={<IndustryDashboard />} />
-    </Routes>
+      <Route path="/add-crop-residue" element={<AddCropResidue />} />
+      <Route path="/sales" element={<Sales />} />
+      <Route path="/alerts" element={<Alerts />} />
+      <Route path="/payments" element={<Payments />} />
+      <Route path="/government-schemes" element={<GovernmentSchemes />} />
+      </Routes>
     // <p>hello</p>
   );
 }

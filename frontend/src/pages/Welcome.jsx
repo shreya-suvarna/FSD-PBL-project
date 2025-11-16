@@ -45,9 +45,20 @@ function Welcome() {
 
       <div className="hero-section">
         <div className="hero-text">
-          <h1 className="dashboard-title">{t("title")}</h1>
 
-          <p className="subtitle">{t("subtitle")}</p>
+          {/* <h1 className="dashboard-title">{t("title")}</h1>
+
+          <p className="subtitle">{t("subtitle")}</p> */}
+
+          <div className="title-container">
+          <h1 data-translate="title" className="dashboard-title">
+            Welcome to Green Kisan
+          </h1>
+          </div>
+          <p className="subtitle" data-translate="subtitle">
+            A platform connecting farmers with industries for sustainable crop residue management
+          </p>
+
 
           <button
             className="get-started-btn"

@@ -1,0 +1,33 @@
+.payments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment-card {
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.payment-card p {
+  margin: 6px 0;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.btn-mark {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-mark:hover {
+  background-color: #0a7a3a;
+}

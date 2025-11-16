@@ -29,13 +29,22 @@ export default function LoginSelection() {
         </div>
       </header>
 
-      <h1 className="dashboard-title">
+
+      {/* <h1 className="dashboard-title">
         {t("chooseLogin") ?? "Choose Your Login Type"}
       </h1>
 
       <p className="subtitle">
         {t("chooseLoginSubtitle") ??
           "Please select whether you are a Farmer or an Industry representative."}
+      </p> */}
+
+<div className="title-container">
+      <h1 className="dashboard-title" data-translate="chooseLogin">Choose Your Login Type</h1>
+      </div>
+      <p className="subtitle" data-translate="subtitle">
+        Please select whether you are a Farmer or an Industry representative.
+
       </p>
 
       <div className="login-cards">

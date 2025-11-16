@@ -1,15 +1,10 @@
 // src/pages/FarmerDashboard.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { useLanguage } from "../context/LanguageContext";
 import "../styles/FarmerDashboard.css";
 
 
 function FarmerDashboard() {
-  const { language, setLanguage, t } = useLanguage();
-
-  console.log("FarmerDashboard render language:", language);
-
   return (
     <div className="dashboard-container">
       <header className="header">
@@ -41,33 +36,23 @@ function FarmerDashboard() {
 
       <div className="main-content-dashboard">
         <div className="dashboard-grid">
-          <div
-            className="dashboard-card"
-            onClick={() => alert(t("add_crop_residue"))}
-          >
+          <div className="dashboard-card" onClick={() => alert("Add Crop Residue")}>
             <span className="card-icon">🌱</span>
             <span className="card-text">{t("add_crop_residue")}</span>
           </div>
-
           <div className="dashboard-card">
             <span className="card-icon">🔔</span>
             <span className="card-text">{t("sales")}</span>
           </div>
-
           <div className="dashboard-card">
             <span className="card-icon">📢</span>
             <span className="card-text">{t("alerts")}</span>
           </div>
-
           <div className="dashboard-card">
             <span className="card-icon">₹</span>
             <span className="card-text">{t("payments")}</span>
           </div>
-
-          <div
-            className="dashboard-card"
-            onClick={() => alert(t("govt_schemes"))}
-          >
+          <div className="dashboard-card" onClick={() => alert("Govt Schemes")}>
             <span className="card-icon">🏛️</span>
             <span className="card-text">{t("govt_schemes")}</span>
           </div>
