@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Auth.css";
 
+import { useLanguage } from "../context/LanguageContext";   // ✅ added
+
 function Farmersignup() {
   const [form, setForm] = useState({
     name: "",
@@ -9,7 +11,9 @@ function Farmersignup() {
     password: "",
     confirmPassword: "",
   });
+
   const navigate = useNavigate();
+  const { t, language, setLanguage } = useLanguage();       // ✅ added
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -19,31 +23,50 @@ function Farmersignup() {
     const { name, email, password, confirmPassword } = form;
 
     if (!name || !email || !password || !confirmPassword) {
-      alert("Please fill in all fields");
+      alert(t("fillAllFields") ?? "Please fill in all fields");
       return;
     }
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      alert(t("passwordsNotMatch") ?? "Passwords do not match");
       return;
     }
 
     if (password.length < 6) {
-      alert("Password must be at least 6 characters long");
+      alert(
+        t("passwordLength") ?? "Password must be at least 6 characters long"
+      );
       return;
     }
 
-    alert("Account created successfully! Please sign in.");
+    alert(
+      t("accountCreated") ??
+        "Account created successfully! Please sign in."
+    );
     navigate("/farmer-signin");
   };
 
   return (
     <div className="auth-container">
       <header className="auth-header">
-        <div className="logo-container">🌱 Green Kisan</div>
+        <div className="logo-container">🌱 {t("title")}</div>
+
         <nav className="nav-links">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/login-selection" className="nav-link">Back to Login</Link>
+          <Link to="/" className="nav-link">{t("home")}</Link>
+          <Link to="/login-selection" className="nav-link">
+            {t("backToLogin") ?? "Back to Login"}
+          </Link>
+
+          {/* Language Dropdown */}
+          <div className="lang-dropdown" style={{ marginLeft: "20px" }}>
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+            >
+              <option value="en">English</option>
+              <option value="kn">ಕನ್ನಡ</option>
+            </select>
+          </div>
         </nav>
       </header>
 
@@ -51,80 +74,84 @@ function Farmersignup() {
         <div className="auth-card">
           <div className="auth-header-section">
             <span className="auth-icon">🧑‍🌾</span>
-            <h1>Create your account</h1>
-            <p>to continue to Green Kisan</p>
+            <h1>{t("createAccount") ?? "Create your account"}</h1>
+            <p>{t("continueToGreenKisan") ?? "to continue to Green Kisan"}</p>
           </div>
 
           <form className="auth-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label>Full name</label>
+              <label>{t("fullName") ?? "Full name"}</label>
               <input
                 type="text"
                 className="form-input"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Enter your full name"
+                placeholder={t("fullNamePlaceholder") ?? "Enter your full name"}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Email or phone</label>
+              <label>{t("emailOrPhone") ?? "Email or phone"}</label>
               <input
                 type="text"
                 className="form-input"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="Enter your email or phone"
+                placeholder={t("emailPlaceholder") ?? "Enter your email or phone"}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Password</label>
+              <label>{t("password") ?? "Password"}</label>
               <input
                 type="password"
                 className="form-input"
                 name="password"
                 value={form.password}
                 onChange={handleChange}
-                placeholder="Create a strong password"
+                placeholder={t("createPassword") ?? "Create a strong password"}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Confirm password</label>
+              <label>{t("confirmPassword") ?? "Confirm password"}</label>
               <input
                 type="password"
                 className="form-input"
                 name="confirmPassword"
                 value={form.confirmPassword}
                 onChange={handleChange}
-                placeholder="Confirm your password"
+                placeholder={t("confirmPasswordPlaceholder") ?? "Confirm your password"}
                 required
               />
             </div>
 
-            <button type="submit" className="auth-btn">Create Account</button>
+            <button type="submit" className="auth-btn">
+              {t("createAccountBtn") ?? "Create Account"}
+            </button>
           </form>
 
           <div className="auth-links">
             <p>
-              Already have an account?{" "}
-              <Link to="/farmer-signin" className="auth-link">Sign in</Link>
+              {t("haveAccount") ?? "Already have an account?"}{" "}
+              <Link to="/farmer-signin" className="auth-link">
+                {t("signIn") ?? "Sign in"}
+              </Link>
             </p>
             <Link to="/login-selection" className="back-link">
-              ← Back to Login Selection
+              ← {t("backToLoginSelection") ?? "Back to Login Selection"}
             </Link>
           </div>
         </div>
       </main>
 
       <footer>
-        <p>© 2025 Green Kisan. All rights reserved.</p>
+        <p>© 2025 Green Kisan. {t("allRights") ?? "All rights reserved."}</p>
       </footer>
     </div>
   );
