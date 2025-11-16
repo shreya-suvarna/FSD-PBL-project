@@ -104,17 +104,18 @@ function Industrysignin() {
           </div>
 
           <div className="auth-links">
-<<<<<<< HEAD
+
             <p>
               {t("noAccount") ?? "Don't have an account?"}{" "}
               <Link to="/Industry-signup" className="auth-link">
                 {t("signUp") ?? "Sign up"}
               </Link>
-=======
+              </p>
+
              <p>
               Don't have an account?{" "}
               <Link to="/industry-signup" className="auth-link">Sign up</Link>
->>>>>>> css
+
             </p>
 
             <Link to="/login-selection" className="back-link">

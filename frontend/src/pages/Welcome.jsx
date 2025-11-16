@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-<<<<<<< HEAD
+
 import "../styles/Welcome.css";
-=======
+
 import "../styles/Welcome.css"
 import farmerImg from "../assets/farmer_illustration.png";
->>>>>>> css
+
 
 function Welcome() {
   const { t, language, setLanguage } = useLanguage();
@@ -58,14 +58,13 @@ function Welcome() {
         </div>
 
         <div className="illustration-area">
-<<<<<<< HEAD
+
           <img
             src="/src/assets/farmer_illustration.png"
             alt={t("farmer_illustration_alt")}
           />
-=======
-          <img src={farmerImg} alt="Farmer illustration" />
->>>>>>> css
+
+          {/* <img src={farmerImg} alt="Farmer illustration" /> */}
         </div>
       </div>
     </div>

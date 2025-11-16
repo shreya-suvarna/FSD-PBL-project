@@ -1,11 +1,9 @@
 // src/pages/FarmerDashboard.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import { useLanguage } from "../context/LanguageContext";
-=======
 import "../styles/FarmerDashboard.css";
->>>>>>> css
+
 
 function FarmerDashboard() {
   const { language, setLanguage, t } = useLanguage();
