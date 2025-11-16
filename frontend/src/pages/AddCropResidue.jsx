@@ -1,9 +1,13 @@
+// src/pages/AddCropResidue.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/AddCropResidue.css";
 
+import { useLanguage } from "../context/LanguageContext"; // added for translations
+
 function AddCropResidue() {
   const navigate = useNavigate();
+  const { t } = useLanguage(); // added for translations
 
   const [form, setForm] = useState({
     cropName: "",
@@ -33,7 +37,7 @@ function AddCropResidue() {
     const files = Array.from(e.target.files);
 
     if (files.length > 5) {
-      alert("❌ Max 5 images allowed");
+      alert(t("max5Images") ?? "❌ Max 5 images allowed");
       e.target.value = "";
       setPreviewImages([]);
       return;
@@ -44,7 +48,9 @@ function AddCropResidue() {
     );
 
     if (validFiles.length !== files.length) {
-      alert("❌ Each image must be <2MB and an image file.");
+      alert(
+        t("imageLimitMsg") ?? "❌ Each image must be <2MB and an image file."
+      );
       e.target.value = "";
       setPreviewImages([]);
       return;
@@ -59,8 +65,17 @@ function AddCropResidue() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!form.cropName || !form.residueType || !form.quantity || !form.location || form.images.length === 0) {
-      alert("❌ Please fill all required fields and upload at least 1 image.");
+    if (
+      !form.cropName ||
+      !form.residueType ||
+      !form.quantity ||
+      !form.location ||
+      form.images.length === 0
+    ) {
+      alert(
+        t("fillRequiredFields") ??
+          "❌ Please fill all required fields and upload at least 1 image."
+      );
       return;
     }
 
@@ -78,8 +93,8 @@ function AddCropResidue() {
 
     const residueData = {
       ...form,
-      uploaderName: form.uploaderName || "Anonymous",
-      uploaderContact: form.uploaderContact || "Not Provided",
+      uploaderName: form.uploaderName || (t("anonymous") ?? "Anonymous"),
+      uploaderContact: form.uploaderContact || (t("notProvided") ?? "Not Provided"),
       images: imagesBase64,
     };
 
@@ -87,7 +102,7 @@ function AddCropResidue() {
     existing.push(residueData);
     localStorage.setItem("cropResidues", JSON.stringify(existing));
 
-    alert("✅ Crop residue uploaded successfully!");
+    alert(t("uploadSuccess") ?? "✅ Crop residue uploaded successfully!");
     setForm({
       cropName: "",
       residueType: "",
@@ -110,123 +125,123 @@ function AddCropResidue() {
 
   return (
     <div className="add-residue-container">
-      <h1 className="add-title">Add Crop Residue</h1>
+      <h1 className="add-title">{t("addCropResidue") ?? "Add Crop Residue"}</h1>
 
       <div className="add-residue-flex">
         {/* Left: Form */}
         <div className="residue-card form-card">
           <form onSubmit={handleSubmit}>
-            <label>Crop Name</label>
+            <label>{t("cropName") ?? "Crop Name"}</label>
             <select id="cropName" value={form.cropName} onChange={handleChange} required>
-              <option value="">Select Crop</option>
-              <option value="Paddy">Paddy</option>
-              <option value="Wheat">Wheat</option>
-              <option value="Rice">Rice</option>
-              <option value="Maize">Maize</option>
-              <option value="Coconut">Coconut</option>
-              <option value="Arecanut">Arecanut</option>
-              <option value="Other">Other</option>
+              <option value="">{t("selectCrop") ?? "Select Crop"}</option>
+              <option value="Paddy">{t("paddy") ?? "Paddy"}</option>
+              <option value="Wheat">{t("wheat") ?? "Wheat"}</option>
+              <option value="Rice">{t("rice") ?? "Rice"}</option>
+              <option value="Maize">{t("maize") ?? "Maize"}</option>
+              <option value="Coconut">{t("coconut") ?? "Coconut"}</option>
+              <option value="Arecanut">{t("arecanut") ?? "Arecanut"}</option>
+              <option value="Other">{t("other") ?? "Other"}</option>
             </select>
 
-            <label>Residue Type</label>
+            <label>{t("residueType") ?? "Residue Type"}</label>
             <select id="residueType" value={form.residueType} onChange={handleChange} required>
-              <option value="">Select Type</option>
-              <option value="Straw">Straw</option>
-              <option value="Husk">Husk</option>
-              <option value="Leaf">Leaf</option>
-              <option value="Shell">Shell</option>
-              <option value="Other">Other</option>
+              <option value="">{t("selectType") ?? "Select Type"}</option>
+              <option value="Straw">{t("straw") ?? "Straw"}</option>
+              <option value="Husk">{t("husk") ?? "Husk"}</option>
+              <option value="Leaf">{t("leaf") ?? "Leaf"}</option>
+              <option value="Shell">{t("shell") ?? "Shell"}</option>
+              <option value="Other">{t("other") ?? "Other"}</option>
             </select>
 
-            <label>Quantity (kg)</label>
+            <label>{t("quantityKg") ?? "Quantity (kg)"}</label>
             <input
               type="number"
               id="quantity"
-              placeholder="e.g. 50"
+              placeholder={t("enterQuantity") ?? "e.g. 50"}
               value={form.quantity}
               onChange={handleChange}
               required
             />
 
-            <label>Location</label>
+            <label>{t("location") ?? "Location"}</label>
             <input
               type="text"
               id="location"
-              placeholder="Village / Town"
+              placeholder={t("enterLocation") ?? "Village / Town"}
               value={form.location}
               onChange={handleChange}
               required
             />
 
-            <label>Uploader Name</label>
+            <label>{t("uploaderName") ?? "Uploader Name"}</label>
             <input
               type="text"
               id="uploaderName"
-              placeholder="Your Name"
+              placeholder={t("enterName") ?? "Your Name"}
               value={form.uploaderName}
               onChange={handleChange}
             />
 
-            <label>Uploader Contact</label>
+            <label>{t("uploaderContact") ?? "Uploader Contact"}</label>
             <input
               type="text"
               id="uploaderContact"
-              placeholder="Phone / Email"
+              placeholder={t("enterContact") ?? "Phone / Email"}
               value={form.uploaderContact}
               onChange={handleChange}
             />
 
-            <label>Upload Crop Residue Photos</label>
+            <label>{t("uploadPhotos") ?? "Upload Crop Residue Photos"}</label>
             <input type="file" id="residueImage" accept="image/*" multiple onChange={handleFileChange} />
 
             <div id="previewContainer" className="preview-container">
               {previewImages.map((src, i) => (
-                <img key={i} src={src} alt={`Preview ${i}`} className="preview-image" />
+                <img key={i} src={src} alt={`${t("preview") ?? "Preview"} ${i}`} className="preview-image" />
               ))}
             </div>
 
             <button type="submit" className="btn-submit">
-              Submit
+              {t("submit") ?? "Submit"}
             </button>
             <button type="button" className="btn-back" onClick={() => navigate("/farmer-dashboard")}>
-              Back to Dashboard
+              {t("backToDashboard") ?? "Back to Dashboard"}
             </button>
           </form>
         </div>
 
         {/* Right: History */}
         <div className="history-panel">
-          <h2>Upload History</h2>
+          <h2>{t("uploadHistory") ?? "Upload History"}</h2>
           <div id="historyContainer">
-            {history.length === 0 && <p>No uploads yet.</p>}
+            {history.length === 0 && <p>{t("noUploads") ?? "No uploads yet."}</p>}
             {history.map((item, index) => (
               <div key={index} className="history-card">
                 <div className="history-images">
                   {item.images.map((img, i) => (
-                    <img key={i} src={img} alt="Crop" />
+                    <img key={i} src={img} alt={t("cropImage") ?? "Crop"} />
                   ))}
                 </div>
                 <div className="history-info">
                   <p>
-                    <strong>Crop:</strong> {item.cropName}
+                    <strong>{t("crop") ?? "Crop:"}</strong> {item.cropName}
                   </p>
                   <p>
-                    <strong>Residue:</strong> {item.residueType}
+                    <strong>{t("residue") ?? "Residue:"}</strong> {item.residueType}
                   </p>
                   <p>
-                    <strong>Quantity:</strong> {item.quantity} kg
+                    <strong>{t("quantity") ?? "Quantity:"}</strong> {item.quantity} kg
                   </p>
                   <p>
-                    <strong>Location:</strong> {item.location}
+                    <strong>{t("location") ?? "Location:"}</strong> {item.location}
                   </p>
                   <p>
-                    <strong>Uploader:</strong> {item.uploaderName}
+                    <strong>{t("uploader") ?? "Uploader:"}</strong> {item.uploaderName}
                   </p>
                   <p>
-                    <strong>Contact:</strong> {item.uploaderContact}
+                    <strong>{t("contact") ?? "Contact:"}</strong> {item.uploaderContact}
                   </p>
                   <button className="btn-delete" onClick={() => deleteEntry(index)}>
-                    Delete
+                    {t("delete") ?? "Delete"}
                   </button>
                 </div>
               </div>
