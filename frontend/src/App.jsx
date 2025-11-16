@@ -7,6 +7,7 @@ import Farmersignup from './pages/Farmersignup';
 import FarmerDashboard from './pages/FarmerDashboard';
 import Industrysignin from "./pages/Industrysignin";
 import Industrysignup from './pages/Industrysignup';
+import IndustryDashboard from './pages/IndustryDashboard';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/Industry-signin" element={<Industrysignin />} />
       <Route path="/Industry-signup" element={<Industrysignup />} />
       <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
+      <Route path="/industry-dashboard" element={<IndustryDashboard />} />
     </Routes>
     // <p>hello</p>
   );

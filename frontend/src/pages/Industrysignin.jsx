@@ -22,7 +22,7 @@ function Industrysignin() {
     e.preventDefault();
 
     if (form.login && form.password) {
-      navigate("/industry/dashboard");
+      navigate("/industry-dashboard");
     } else {
       alert(t("enterEmailPassword") ?? "Please enter email and password");
     }
@@ -104,11 +104,17 @@ function Industrysignin() {
           </div>
 
           <div className="auth-links">
+<<<<<<< HEAD
             <p>
               {t("noAccount") ?? "Don't have an account?"}{" "}
               <Link to="/Industry-signup" className="auth-link">
                 {t("signUp") ?? "Sign up"}
               </Link>
+=======
+             <p>
+              Don't have an account?{" "}
+              <Link to="/industry-signup" className="auth-link">Sign up</Link>
+>>>>>>> css
             </p>
 
             <Link to="/login-selection" className="back-link">
