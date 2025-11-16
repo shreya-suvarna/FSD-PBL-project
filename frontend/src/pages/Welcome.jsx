@@ -37,9 +37,11 @@ function Welcome() {
 
       <div className="hero-section">
         <div className="hero-text">
+          <div className="title-container">
           <h1 data-translate="title" className="dashboard-title">
             Welcome to Green Kisan
           </h1>
+          </div>
           <p className="subtitle" data-translate="subtitle">
             A platform connecting farmers with industries for sustainable crop residue management
           </p>

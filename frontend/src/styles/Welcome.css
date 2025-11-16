@@ -33,7 +33,9 @@ body {
     background-color: #ffffff;
     border-radius: var(--border-radius-lg);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    
 }
+
 
 /* Header */
 .header {
@@ -41,6 +43,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 30px;
+}.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* horizontal centering */
 }
 
 .logo-container {
@@ -101,6 +107,7 @@ body {
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .subtitle {

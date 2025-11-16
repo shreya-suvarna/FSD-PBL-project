@@ -30,8 +30,9 @@ export default function LoginSelection() {
           </div>
         </div>
       </header>
-
+<div className="title-container">
       <h1 className="dashboard-title" data-translate="chooseLogin">Choose Your Login Type</h1>
+      </div>
       <p className="subtitle" data-translate="subtitle">
         Please select whether you are a Farmer or an Industry representative.
       </p>
