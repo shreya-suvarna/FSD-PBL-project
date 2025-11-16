@@ -2,16 +2,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/FarmerDashboard.css";
+import { useLanguage } from "../context/LanguageContext";
 
 
 function FarmerDashboard() {
+   const { t, language, setLanguage } = useLanguage();
   return (
     <div className="dashboard-container">
       <header className="header">
-        <div className="logo-container">🌱 {("title")}</div>
+        <div className="logo-container">🌱 {t("title")}</div>
 
         <nav className="nav-links">
-          <Link to="/" className="nav-link">{("home")}</Link>
+          <Link to="/" className="nav-link">{t("home")}</Link>
           {/* <Link to="#" className="nav-link">{t("alerts")}</Link>
           <Link to="#" className="nav-link">{t("payments")}</Link>
           <Link to="#" className="nav-link">{t("settings") ?? "Settings"}</Link> */}
