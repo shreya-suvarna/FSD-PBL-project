@@ -73,8 +73,92 @@ enterValidPhone: "Enter a valid 10-digit phone number",
 searchResidue: "Search Residue",
 preBook: "Pre-Book",
 industryIllustration: "Industry illustration",
-logout: "Logout"
+logout: "Logout",
+govtSchemesTitle: "Government Schemes for Farmers",
+learnMore: "Learn More",
 
+scheme1_title: "🌿 Gobardhan (Galvanizing Organic Bio-Agro Resources Dhan)",
+scheme1_desc: "Supports rural areas in converting organic waste into compost and biogas.",
+
+scheme2_title: "♻️ Organic & Bio-waste Composting – KVK Dakshina Kannada",
+scheme2_desc: "Helps farmers convert crop waste into organic fertilizer.",
+
+scheme3_title: "♻️ Waste Management in Karnataka",
+scheme3_desc: "Covers composting and organic waste management initiatives.",
+
+scheme4_title: "💧 National Bioenergy Mission (NBEM)",
+scheme4_desc: "Promotes bioenergy from agricultural waste.",
+
+scheme5_title: "🌱 Karnataka Compost Development Corporation – Composting",
+scheme5_desc: "Converts agricultural waste into compost.",
+
+scheme6_title: "🧪 Karnataka State Pollution Control Board – Waste Initiatives",
+scheme6_desc: "Supports waste management programs across Karnataka.",
+
+scheme7_title: "💡 MGIRED – Bioenergy Projects",
+scheme7_desc: "Promotes eco-friendly rural energy systems.",
+
+scheme8_title: "🚜 Bengaluru Organic Farming Program",
+scheme8_desc: "Encourages organic farming and composting.",
+
+scheme9_title: "🌻 NPMCR – National Crop Residue Policy",
+scheme9_desc: "Policy to reduce residue burning and promote composting.",
+
+
+
+
+max5Images: "❌ Max 5 images allowed",
+imageLimitMsg: "❌ Each image must be <2MB and an image file.",
+fillRequiredFields: "❌ Please fill all required fields and upload at least 1 image.",
+uploadSuccess: "✅ Crop residue uploaded successfully!",
+
+addCropResidue: "Add Crop Residue",
+cropName: "Crop Name",
+selectCrop: "Select Crop",
+paddy: "Paddy",
+wheat: "Wheat",
+rice: "Rice",
+maize: "Maize",
+coconut: "Coconut",
+arecanut: "Arecanut",
+other: "Other",
+
+residueType: "Residue Type",
+selectType: "Select Type",
+straw: "Straw",
+husk: "Husk",
+leaf: "Leaf",
+shell: "Shell",
+
+quantityKg: "Quantity (kg)",
+enterQuantity: "e.g. 50",
+location: "Location",
+enterLocation: "Village / Town",
+uploaderName: "Uploader Name",
+enterName: "Your Name",
+uploaderContact: "Uploader Contact",
+enterContact: "Phone / Email",
+
+uploadPhotos: "Upload Crop Residue Photos",
+preview: "Preview",
+
+submit: "Submit",
+backToDashboard: "Back to Dashboard",
+
+uploadHistory: "Upload History",
+noUploads: "No uploads yet.",
+cropImage: "Crop",
+
+crop: "Crop:",
+residue: "Residue:",
+quantity: "Quantity:",
+uploader: "Uploader:",
+contact: "Contact:",
+
+delete: "Delete",
+
+anonymous: "Anonymous",
+notProvided: "Not Provided",
 
 
 
@@ -154,10 +238,93 @@ enterValidPhone: "ದಯವಿಟ್ಟು ಮಾನ್ಯ 10-ಅಂಕಿಯ �
 searchResidue: "ಅವಶೇಷ ಹುಡುಕಿ",
 preBook: "ಮುಂಗಡ ಬುಕ್",
 industryIllustration: "ಕೈಗಾರಿಕಾ ಚಿತ್ರಣ",
-logout: "ಲಾಗ್ ಔಟ್"
+logout: "ಲಾಗ್ ಔಟ್",
+govtSchemesTitle: "ರೈತರಿಗೆ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು",
+learnMore: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
+
+scheme1_title: "🌿 ಗೊಬರ್ಧನ್ ಯೋಜನೆ",
+scheme1_desc: "ಸಸ್ಯಜ ನಿರ್ಜೀವ ಕಸವನ್ನು ಕಂಪೋಸ್ಟ್ ಮತ್ತು ಬಯೋ ಗ್ಯಾಸ್ ಆಗಿ ಪರಿವರ್ತಿಸಲು ಸಹಾಯಿಸುತ್ತದೆ.",
+
+scheme2_title: "♻️ ಸಾವಯವ & ಬಯೋ-ವೆಸ್ಟ್ ಕಂಪೋಸ್ಟಿಂಗ್ – KVK ದಕ್ಷಿಣ ಕನ್ನಡ",
+scheme2_desc: "ಬೆಳೆ ಕಸದನ್ನು ಸಾವಯವ ಗೊಬ್ಬರವಾಗಿ ಪರಿವರ್ತಿಸಲು ಸಹಕಾರ.",
+
+scheme3_title: "♻️ ಕರ್ನಾಟಕದಲ್ಲಿ ಕಸದ ನಿರ್ವಹಣೆ",
+scheme3_desc: "ಕಂಪೋಸ್ಟಿಂಗ್ ಮತ್ತು ಕಸದ ನಿರ್ವಹಣಾ ಕಾರ್ಯಕ್ರಮಗಳು.",
+
+scheme4_title: "💧 NBEM – ನ್ಯಾಷನಲ್ ಬಯೋಎನರ್ಜಿ ಮಿಷನ್",
+scheme4_desc: "ಕೃಷಿ ಅವಶೇಷಗಳಿಂದ ಬಯೋಎನರ್ಜಿ ಉತ್ಪಾದನೆಗೆ ಉತ್ತೇಜನ.",
+
+scheme5_title: "🌱 KCDC – ಫಾರ್ಮ್-ವೆಸ್ಟ್ ಕಾಂಪೋಸ್ಟಿಂಗ್",
+scheme5_desc: "ಕೃಷಿ ಕಸದಿಂದ ಕಂಪೋಸ್ಟ್ ತಯಾರಿಕೆ.",
+
+scheme6_title: "🧪 KSPCB – ಕಸದ ನಿರ್ವಹಣಾ ಕಾರ್ಯಕ್ರಮಗಳು",
+scheme6_desc: "ಕರ್ನಾಟಕದಲ್ಲಿ ಕಸದ ನಿರ್ವಹಣೆಗೆ ಬೆಂಬಲ.",
+
+scheme7_title: "💡 MGIRED – ಬಯೋಎನರ್ಜಿ ಯೋಜನೆಗಳು",
+scheme7_desc: "ಗ್ರಾಮೀಣ ಶಕ್ತಿ ವ್ಯವಸ್ಥೆಗಳಿಗೆ ಉತ್ತೇಜನ.",
+
+scheme8_title: "🚜 ಬೆಂಗಳೂರು ಸಾವಯವ ಕೃಷಿ ಯೋಜನೆ",
+scheme8_desc: "ಸಾವಯವ ಕೃಷಿ ಮತ್ತು ಕಂಪೋಸ್ಟ್ ಬಳಕೆಗೆ ಉತ್ತೇಜನ.",
+
+scheme9_title: "🌻 ಬೆಳೆ ಅವಶೇಷ ನಿರ್ವಹಣಾ ರಾಷ್ಟ್ರೀಯ ನೀತಿ (NPMCR)",
+scheme9_desc: "ಬೆಳೆ ಅವಶೇಷ ದಹನ ಕಡಿಮೆ ಮಾಡಲು ರಚಿಸಲಾದ ನೀತಿ.",
 
 
 
+
+
+max5Images: "❌ ಗರಿಷ್ಠ 5 ಚಿತ್ರಗಳು ಮಾತ್ರ ಅನುಮತಿಸಲಾಗಿದೆ",
+imageLimitMsg: "❌ ಪ್ರತಿಯೊಂದು ಚಿತ್ರವು <2MB ಆಗಿರಬೇಕು ಮತ್ತು ಚಿತ್ರ ಫೈಲ್ ಆಗಿರಬೇಕು.",
+fillRequiredFields: "❌ ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳನ್ನು ತುಂಬಿ ಮತ್ತು ಕನಿಷ್ಠ ಒಂದು ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.",
+uploadSuccess: "✅ ಬೆಳೆ ಅವಶೇಷವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ!",
+
+addCropResidue: "ಬೆಳೆ ಅವಶೇಷ ಸೇರಿಸಿ",
+cropName: "ಬೆಳೆ ಹೆಸರು",
+selectCrop: "ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ",
+paddy: "ಅಕ್ಕಿ",
+wheat: "ಗೋಧಿ",
+rice: "ಅನ್ನ",
+maize: "ಮೆಕ್ಕೆಜೋಳ",
+coconut: "ತೆಂಗಿನಕಾಯಿ",
+arecanut: "ಅಡಿಕೆ",
+other: "ಇತರೆ",
+
+residueType: "ಅವಶೇಷದ ಪ್ರಕಾರ",
+selectType: "ಪ್ರಕಾರ ಆಯ್ಕೆ ಮಾಡಿ",
+straw: "ತುಳ್ಳು",
+husk: "ಹುಲ್ಲು",
+leaf: "ಎಲೆ",
+shell: "ಚಿಪ್ಪು",
+
+quantityKg: "ಪ್ರಮಾಣ (ಕೆಜಿ)",
+enterQuantity: "ಉದಾ: 50",
+location: "ಸ್ಥಳ",
+enterLocation: "ಗ್ರಾಮ / ನಗರ",
+uploaderName: "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದವರು",
+enterName: "ನಿಮ್ಮ ಹೆಸರು",
+uploaderContact: "ಸಂಪರ್ಕ",
+enterContact: "ಫೋನ್ / ಇಮೇಲ್",
+
+uploadPhotos: "ಬೆಳೆ ಅವಶೇಷದ ಚಿತ್ರಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+preview: "ಮುನ್ನೋಟ",
+
+submit: "ಸಲ್ಲಿಸು",
+backToDashboard: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ಗೆ ಹಿಂತಿರುಗಿ",
+
+uploadHistory: "ಅಪ್‌ಲೋಡ್ ಇತಿಹಾಸ",
+noUploads: "ಇನ್ನೂ ಯಾವುದೇ ಅಪ್‌ಲೋಡ್ ಇಲ್ಲ.",
+cropImage: "ಬೆಳೆ",
+
+crop: "ಬೆಳೆ:",
+residue: "ಅವಶೇಷ:",
+quantity: "ಪ್ರಮಾಣ:",
+uploader: "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದವರು:",
+contact: "ಸಂಪರ್ಕ:",
+
+delete: "ಅಳಿಸಿ",
+
+anonymous: "ಅಜ್ಞಾತ",
+notProvided: "ನೀಡಲಾಗಿಲ್ಲ",
 
 
 
