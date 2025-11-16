@@ -37,15 +37,15 @@ function IndustryDashboard() {
             <span className="card-icon">🔍</span>
             <span className="card-text">Search Residue</span>
           </div>
-          <div className="dashboard-card" onClick={() => alert("Pre-Book")}>
+          <div className="dashboard-card" onClick={() => navigate("/pre-book")}>
             <span className="card-icon">🗓️</span>
             <span className="card-text">Pre-Book</span>
           </div>
-          <div className="dashboard-card" onClick={() => alert("Alerts")}>
+          <div className="dashboard-card" onClick={() => navigate("/Alerts")}>
             <span className="card-icon">🔔</span>
             <span className="card-text">Alerts</span>
           </div>
-          <div className="dashboard-card" onClick={() => alert("Payments")}>
+          <div className="dashboard-card" onClick={() => navigate("/Payments")}>
             <span className="card-icon">💲</span>
             <span className="card-text">Payments</span>
           </div>

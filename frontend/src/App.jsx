@@ -14,6 +14,7 @@ import Alerts from "./pages/Alerts";
 import Payments from "./pages/Payments";
 import GovernmentSchemes from "./pages/GovernmentSchemes";
 import SearchResidue from "./pages/SearchResidue";
+import PreBook from "./pages/PreBooks";
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
       <Route path="/payments" element={<Payments />} />
       <Route path="/government-schemes" element={<GovernmentSchemes />} />
       <Route path="/search-residue" element={<SearchResidue/>}/>
+      <Route path="/pre-book" element={<PreBook/>}/>
+
       </Routes>
     // <p>hello</p>
   );
