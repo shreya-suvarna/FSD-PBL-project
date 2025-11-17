@@ -61,7 +61,7 @@ function FarmerDashboard() {
             onClick={() => navigate("/government-schemes")}
           >
             <span className="card-icon">🏛️</span>
-            <span className="card-text">Government Schemes</span>
+            <span className="card-text">{t("govt_schemes")}</span>
           </div>
         </div>
 
