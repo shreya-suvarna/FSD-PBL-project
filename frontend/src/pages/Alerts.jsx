@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Alerts.css";
 
+import { useLanguage } from "../context/LanguageContext"; // ✅ added
+
 function Alerts() {
+  const { t } = useLanguage(); // ✅ added
+
   const [alerts, setAlerts] = useState([]);
 
-  // Load alerts from localStorage or mock data
   useEffect(() => {
     const storedAlerts = JSON.parse(localStorage.getItem("alerts") || "[]");
     setAlerts(storedAlerts);
@@ -25,14 +28,15 @@ function Alerts() {
 
   return (
     <div className="alerts-container">
-      <h1 className="alerts-title">Alerts</h1>
+      <h1 className="alerts-title">{t("alertsTitle") ?? "Alerts"}</h1>
+
       <button className="btn-mark-all" onClick={markAllAsRead}>
-        Mark all as read
+        {t("markAllRead") ?? "Mark all as read"}
       </button>
 
       <div className="alerts-list">
         {alerts.length === 0 ? (
-          <p>No alerts yet.</p>
+          <p>{t("noAlerts") ?? "No alerts yet."}</p>
         ) : (
           alerts.map((alert, index) => (
             <div

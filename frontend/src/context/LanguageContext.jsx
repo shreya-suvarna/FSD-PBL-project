@@ -159,6 +159,116 @@ delete: "Delete",
 
 anonymous: "Anonymous",
 notProvided: "Not Provided",
+searchCropResidue: "Search Crop Residue",
+selectCrop: "Select Crop",
+paddy: "Paddy",
+wheat: "Wheat",
+rice: "Rice",
+maize: "Maize",
+coconut: "Coconut",
+arecanut: "Arecanut",
+other: "Other",
+
+selectResidueType: "Select Residue Type",
+shell: "Shell",
+husk: "Husk",
+leaf: "Leaf",
+straw: "Straw",
+
+locationPlaceholder: "Location (Village/Town)",
+minQuantityPlaceholder: "Min Quantity (kg)",
+search: "Search",
+
+noResidues: "No crop residues available.",
+cropImageAlt: "Crop",
+
+cropLabel: "Crop:",
+residueTypeLabel: "Residue Type:",
+quantityLabel: "Quantity:",
+locationLabel: "Location:",
+uploaderLabel: "Uploader:",
+contactLabel: "Contact:",
+kg: "kg",
+
+anonymous: "Anonymous",
+notProvided: "Not Provided",
+prebookTitle: "Pre-Book Crop Residue",
+
+cropName: "Crop Name",
+selectCrop: "Select Crop",
+paddy: "Paddy",
+wheat: "Wheat",
+rice: "Rice",
+maize: "Maize",
+coconut: "Coconut",
+arecanut: "Arecanut",
+other: "Other",
+
+residueType: "Residue Type",
+selectType: "Select Type",
+straw: "Straw",
+husk: "Husk",
+leaf: "Leaf",
+shell: "Shell",
+
+quantityKg: "Quantity (kg)",
+enterQuantity: "e.g. 100",
+
+location: "Location",
+enterLocation: "Village / Town",
+
+industryName: "Industry Name",
+enterIndustryName: "Your Industry Name",
+
+industryContact: "Industry Contact",
+enterContact: "Phone / Email",
+
+additionalNotes: "Additional Notes",
+optionalNotes: "Optional notes",
+
+submit: "Submit",
+backToDashboard: "Back to Dashboard",
+
+previousBookings: "Previous Pre-Bookings",
+noPrebookings: "No pre-bookings yet.",
+
+crop: "Crop:",
+residue: "Residue:",
+quantity: "Quantity:",
+industry: "Industry:",
+locationLabel: "Location:",
+contact: "Contact:",
+notes: "Notes:",
+delete: "Delete",
+
+anonymous: "Anonymous",
+notProvided: "Not Provided",
+
+fillRequiredFields: "❌ Please fill all required fields",
+prebookSuccess: "✅ Pre-Booking submitted successfully!",
+
+newPreBooking: "New Pre-Booking Request",
+wantsPrebook: "wants to pre-book",
+of: "of",
+from: "from",
+alertsTitle: "Alerts",
+markAllRead: "Mark all as read",
+noAlerts: "No alerts yet.",
+paymentsTitle: "Payments",
+noPayments: "No payments yet.",
+crop: "Crop:",
+quantity: "Quantity:",
+amount: "Amount:",
+status: "Status:",
+date: "Date:",
+markReceived: "Mark as Received",
+received: "Received",
+myDashboard: "My Dashboard",
+logout: "Logout",
+
+
+
+
 
 
 
@@ -325,6 +435,114 @@ delete: "ಅಳಿಸಿ",
 
 anonymous: "ಅಜ್ಞಾತ",
 notProvided: "ನೀಡಲಾಗಿಲ್ಲ",
+
+searchCropResidue: "ಬೆಳೆ ಅವಶೇಷ ಹುಡುಕಿ",
+selectCrop: "ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ",
+paddy: "ಅಕ್ಕಿ",
+wheat: "ಗೋಧಿ",
+rice: "ಅನ್ನ",
+maize: "ಮೆಕ್ಕೆಜೋಳ",
+coconut: "ತೆಂಗಿನಕಾಯಿ",
+arecanut: "ಅಡಿಕೆ",
+other: "ಇತರೆ",
+
+selectResidueType: "ಅವಶೇಷದ ಪ್ರಕಾರ ಆಯ್ಕೆ ಮಾಡಿ",
+shell: "ಚಿಪ್ಪು",
+husk: "ಹುಲ್ಲು",
+leaf: "ಎಲೆ",
+straw: "ತುಳ್ಳು",
+
+locationPlaceholder: "ಸ್ಥಳ (ಗ್ರಾಮ/ಪಟ್ಟಣ)",
+minQuantityPlaceholder: "ಕನಿಷ್ಠ ಪ್ರಮಾಣ (ಕೆಜಿ)",
+search: "ಹುಡುಕಿ",
+
+noResidues: "ಯಾವುದೇ ಬೆಳೆ ಅವಶೇಷಗಳು ಲಭ್ಯವಿಲ್ಲ.",
+cropImageAlt: "ಬೆಳೆ",
+
+cropLabel: "ಬೆಳೆ:",
+residueTypeLabel: "ಅವಶೇಷದ ಪ್ರಕಾರ:",
+quantityLabel: "ಪ್ರಮಾಣ:",
+locationLabel: "ಸ್ಥಳ:",
+uploaderLabel: "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದವರು:",
+contactLabel: "ಸಂಪರ್ಕ:",
+kg: "ಕೆಜಿ",
+
+anonymous: "ಅಜ್ಞಾತ",
+notProvided: "ನೀಡಲಾಗಿಲ್ಲ",
+prebookTitle: "ಬೆಳೆ ಅವಶೇಷ ಪೂರ್ವ-ಬುಕಿಂಗ್",
+
+cropName: "ಬೆಳೆ ಹೆಸರು",
+selectCrop: "ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ",
+paddy: "ಅಕ್ಕಿ",
+wheat: "ಗೋಧಿ",
+rice: "ಅನ್ನ",
+maize: "ಮೆಕ್ಕೆಜೋಳ",
+coconut: "ತೆಂಗಿನಕಾಯಿ",
+arecanut: "ಅಡಿಕೆ",
+other: "ಇತರೆ",
+
+residueType: "ಅವಶೇಷದ ಪ್ರಕಾರ",
+selectType: "ಪ್ರಕಾರ ಆಯ್ಕೆ ಮಾಡಿ",
+straw: "ತುಳ್ಳು",
+husk: "ಹುಲ್ಲು",
+leaf: "ಎಲೆ",
+shell: "ಚಿಪ್ಪು",
+
+quantityKg: "ಪ್ರಮಾಣ (ಕೆಜಿ)",
+enterQuantity: "ಉದಾ: 100",
+
+location: "ಸ್ಥಳ",
+enterLocation: "ಗ್ರಾಮ / ಪಟ್ಟಣ",
+
+industryName: "ಕೈಗಾರಿಕೆಯ ಹೆಸರು",
+enterIndustryName: "ನಿಮ್ಮ ಕೈಗಾರಿಕೆಯ ಹೆಸರು",
+
+industryContact: "ಕೈಗಾರಿಕೆಯ ಸಂಪರ್ಕ",
+enterContact: "ಫೋನ್ / ಇಮೇಲ್",
+
+additionalNotes: "ಹೆಚ್ಚುವರಿ ಟಿಪ್ಪಣಿಗಳು",
+optionalNotes: "ಐಚ್ಛಿಕ ಟಿಪ್ಪಣಿಗಳು",
+
+submit: "ಸಲ್ಲಿಸು",
+backToDashboard: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ಗೆ ಹಿಂತಿರುಗಿ",
+
+previousBookings: "ಹಿಂದಿನ ಪೂರ್ವ-ಬುಕಿಂಗ್‌ಗಳು",
+noPrebookings: "ಯಾವುದೇ ಪೂರ್ವ-ಬುಕಿಂಗ್‌ಗಳು ಇಲ್ಲ.",
+
+crop: "ಬೆಳೆ:",
+residue: "ಅವಶೇಷ:",
+quantity: "ಪ್ರಮಾಣ:",
+industry: "ಕೈಗಾರಿಕೆ:",
+locationLabel: "ಸ್ಥಳ:",
+contact: "ಸಂಪರ್ಕ:",
+notes: "ಟಿಪ್ಪಣಿಗಳು:",
+delete: "ಅಳಿಸು",
+
+anonymous: "ಅಜ್ಞಾತ",
+notProvided: "ನೀಡಲಾಗಿಲ್ಲ",
+
+fillRequiredFields: "❌ ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಅಗತ್ಯ ಕ್ಷೇತ್ರಗಳನ್ನು ತುಂಬಿ",
+prebookSuccess: "✅ ಪೂರ್ವ-ಬುಕಿಂಗ್ ಯಶಸ್ವಿಯಾಗಿದೆ!",
+
+newPreBooking: "ಹೊಸ ಪೂರ್ವ-ಬುಕಿಂಗ್ ವಿನಂತಿ",
+wantsPrebook: "ಪೂರ್ವ-ಬುಕ್ ಮಾಡಲು ಬಯಸುತ್ತಾರೆ",
+of: "ಅನ್ನು",
+from: "ಇಂದ",
+
+alertsTitle: "ಎಚ್ಚರಿಕೆಗಳು",
+markAllRead: "ಎಲ್ಲವನ್ನೂ ಓದಿದೆ ಎಂದು ಗುರುತಿಸಿ",
+noAlerts: "ಯಾವುದೇ ಎಚ್ಚರಿಕೆಗಳು ಇಲ್ಲ.",
+paymentsTitle: "ಪಾವತಿಗಳು",
+noPayments: "ಇನ್ನೂ ಪಾವತಿಗಳು ಇಲ್ಲ.",
+crop: "ಬೆಳೆ:",
+quantity: "ಪ್ರಮಾಣ:",
+amount: "ಮೊತ್ತ:",
+status: "ಸ್ಥಿತಿ:",
+date: "ದಿನಾಂಕ:",
+markReceived: "ಸ್ವೀಕರಿಸಲಾಗಿದೆ ಎಂದು ಗುರುತಿಸಿ",
+received: "ಸ್ವೀಕರಿಸಲಾಗಿದೆ",
+myDashboard: "ನನ್ನ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+logout: "ಲಾಗ್ ಔಟ್",
 
 
 

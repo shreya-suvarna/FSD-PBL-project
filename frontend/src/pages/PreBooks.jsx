@@ -1,9 +1,13 @@
+// src/pages/PreBook.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/PreBook.css";
 
+import { useLanguage } from "../context/LanguageContext"; // ✅ added
+
 function PreBook() {
   const navigate = useNavigate();
+  const { t } = useLanguage(); // ✅ added
 
   const [form, setForm] = useState({
     cropName: "",
@@ -17,7 +21,6 @@ function PreBook() {
 
   const [history, setHistory] = useState([]);
 
-  // Load previous bookings
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("preBookings") || "[]");
     setHistory(stored);
@@ -32,35 +35,39 @@ function PreBook() {
     e.preventDefault();
 
     if (!form.cropName || !form.residueType || !form.quantity || !form.location || !form.industryName) {
-      alert("❌ Please fill all required fields");
+      alert(t("fillRequiredFields") ?? "❌ Please fill all required fields");
       return;
     }
 
     const bookingData = {
       ...form,
-      industryContact: form.industryContact || "Not Provided",
+      industryContact: form.industryContact || (t("notProvided") ?? "Not Provided"),
       timestamp: new Date().toISOString(),
     };
 
-    // Save to preBookings
     const existing = JSON.parse(localStorage.getItem("preBookings") || "[]");
     existing.push(bookingData);
     localStorage.setItem("preBookings", JSON.stringify(existing));
     setHistory(existing);
 
-    // Add to farmer Alerts
-   const alerts = JSON.parse(localStorage.getItem("alerts") || "[]");
+    const alerts = JSON.parse(localStorage.getItem("alerts") || "[]");
 
-alerts.push({
-  title: "New Pre-Booking Request",
-  message: `${form.industryName} wants to pre-book ${form.quantity} kg of ${form.cropName} (${form.residueType}) from ${form.location}.`,
-  read: false,
-  date: new Date().toLocaleString(),
-});
+    alerts.push({
+      title: t("newPreBooking") ?? "New Pre-Booking Request",
+      message:
+        `${form.industryName} ` +
+        (t("wantsPrebook") ?? "wants to pre-book") +
+        ` ${form.quantity} kg ` +
+        `${t("of") ?? "of"} ${form.cropName} (${form.residueType}) ` +
+        `${t("from") ?? "from"} ${form.location}.`,
+      read: false,
+      date: new Date().toLocaleString(),
+    });
 
     localStorage.setItem("alerts", JSON.stringify(alerts));
 
-    alert("✅ Pre-Booking submitted successfully!");
+    alert(t("prebookSuccess") ?? "✅ Pre-Booking submitted successfully!");
+
     setForm({
       cropName: "",
       residueType: "",
@@ -81,105 +88,117 @@ alerts.push({
 
   return (
     <div className="prebook-container">
-      <h1 className="prebook-title">Pre-Book Crop Residue</h1>
+      <h1 className="prebook-title">{t("prebookTitle") ?? "Pre-Book Crop Residue"}</h1>
 
       <div className="prebook-flex">
         {/* Form */}
         <div className="prebook-card">
           <form onSubmit={handleSubmit}>
-            <label>Crop Name</label>
+            <label>{t("cropName") ?? "Crop Name"}</label>
             <select id="cropName" value={form.cropName} onChange={handleChange} required>
-              <option value="">Select Crop</option>
-              <option value="Paddy">Paddy</option>
-              <option value="Wheat">Wheat</option>
-              <option value="Rice">Rice</option>
-              <option value="Maize">Maize</option>
-              <option value="Coconut">Coconut</option>
-              <option value="Arecanut">Arecanut</option>
-              <option value="Other">Other</option>
+              <option value="">{t("selectCrop") ?? "Select Crop"}</option>
+              <option value="Paddy">{t("paddy") ?? "Paddy"}</option>
+              <option value="Wheat">{t("wheat") ?? "Wheat"}</option>
+              <option value="Rice">{t("rice") ?? "Rice"}</option>
+              <option value="Maize">{t("maize") ?? "Maize"}</option>
+              <option value="Coconut">{t("coconut") ?? "Coconut"}</option>
+              <option value="Arecanut">{t("arecanut") ?? "Arecanut"}</option>
+              <option value="Other">{t("other") ?? "Other"}</option>
             </select>
 
-            <label>Residue Type</label>
+            <label>{t("residueType") ?? "Residue Type"}</label>
             <select id="residueType" value={form.residueType} onChange={handleChange} required>
-              <option value="">Select Type</option>
-              <option value="Straw">Straw</option>
-              <option value="Husk">Husk</option>
-              <option value="Leaf">Leaf</option>
-              <option value="Shell">Shell</option>
-              <option value="Other">Other</option>
+              <option value="">{t("selectType") ?? "Select Type"}</option>
+              <option value="Straw">{t("straw") ?? "Straw"}</option>
+              <option value="Husk">{t("husk") ?? "Husk"}</option>
+              <option value="Leaf">{t("leaf") ?? "Leaf"}</option>
+              <option value="Shell">{t("shell") ?? "Shell"}</option>
+              <option value="Other">{t("other") ?? "Other"}</option>
             </select>
 
-            <label>Quantity (kg)</label>
+            <label>{t("quantityKg") ?? "Quantity (kg)"}</label>
             <input
               type="number"
               id="quantity"
-              placeholder="e.g. 100"
+              placeholder={t("enterQuantity") ?? "e.g. 100"}
               value={form.quantity}
               onChange={handleChange}
               required
             />
 
-            <label>Location</label>
+            <label>{t("location") ?? "Location"}</label>
             <input
               type="text"
               id="location"
-              placeholder="Village / Town"
+              placeholder={t("enterLocation") ?? "Village / Town"}
               value={form.location}
               onChange={handleChange}
               required
             />
 
-            <label>Industry Name</label>
+            <label>{t("industryName") ?? "Industry Name"}</label>
             <input
               type="text"
               id="industryName"
-              placeholder="Your Industry Name"
+              placeholder={t("enterIndustryName") ?? "Your Industry Name"}
               value={form.industryName}
               onChange={handleChange}
               required
             />
 
-            <label>Industry Contact</label>
+            <label>{t("industryContact") ?? "Industry Contact"}</label>
             <input
               type="text"
               id="industryContact"
-              placeholder="Phone / Email"
+              placeholder={t("enterContact") ?? "Phone / Email"}
               value={form.industryContact}
               onChange={handleChange}
             />
 
-            <label>Additional Notes</label>
+            <label>{t("additionalNotes") ?? "Additional Notes"}</label>
             <textarea
               id="notes"
-              placeholder="Optional notes"
+              placeholder={t("optionalNotes") ?? "Optional notes"}
               value={form.notes}
               onChange={handleChange}
               rows="3"
             ></textarea>
 
-            <button type="submit" className="btn-submit">Submit</button>
-            <button type="button" className="btn-back" onClick={() => navigate("/industry-dashboard")}>
-              Back to Dashboard
+            <button type="submit" className="btn-submit">{t("submit") ?? "Submit"}</button>
+            <button
+              type="button"
+              className="btn-back"
+              onClick={() => navigate("/industry-dashboard")}
+            >
+              {t("backToDashboard") ?? "Back to Dashboard"}
             </button>
           </form>
         </div>
 
-        {/* Booking History */}
+        {/* History */}
         <div className="history-panel">
-          <h2>Previous Pre-Bookings</h2>
-          {history.length === 0 && <p>No pre-bookings yet.</p>}
+          <h2>{t("previousBookings") ?? "Previous Pre-Bookings"}</h2>
+
+          {history.length === 0 && <p>{t("noPrebookings") ?? "No pre-bookings yet."}</p>}
+
           {history.map((item, index) => (
             <div key={index} className="history-card">
-              <p><strong>Crop:</strong> {item.cropName}</p>
-              <p><strong>Residue:</strong> {item.residueType}</p>
-              <p><strong>Quantity:</strong> {item.quantity} kg</p>
-              <p><strong>Location:</strong> {item.location}</p>
-              <p><strong>Industry:</strong> {item.industryName}</p>
-              <p><strong>Contact:</strong> {item.industryContact}</p>
-              {item.notes && <p><strong>Notes:</strong> {item.notes}</p>}
-              <button className="btn-delete" onClick={() => deleteEntry(index)}>Delete</button>
+              <p><strong>{t("crop") ?? "Crop:"}</strong> {item.cropName}</p>
+              <p><strong>{t("residue") ?? "Residue:"}</strong> {item.residueType}</p>
+              <p><strong>{t("quantity") ?? "Quantity:"}</strong> {item.quantity} kg</p>
+              <p><strong>{t("location") ?? "Location:"}</strong> {item.location}</p>
+              <p><strong>{t("industry") ?? "Industry:"}</strong> {item.industryName}</p>
+              <p><strong>{t("contact") ?? "Contact:"}</strong> {item.industryContact}</p>
+              {item.notes && (
+                <p><strong>{t("notes") ?? "Notes:"}</strong> {item.notes}</p>
+              )}
+
+              <button className="btn-delete" onClick={() => deleteEntry(index)}>
+                {t("delete") ?? "Delete"}
+              </button>
             </div>
           ))}
+
         </div>
       </div>
     </div>
