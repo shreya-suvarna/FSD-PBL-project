@@ -18,15 +18,44 @@ function Industrysignin() {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    if (form.login && form.password) {
+  //   if (form.login && form.password) {
+  //     navigate("/industry-dashboard");
+  //   } else {
+  //     alert(t("enterEmailPassword") ?? "Please enter email and password");
+  //   }
+  // };
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("http://localhost:5000/api/industry/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        login: form.login,
+        password: form.password
+      })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      localStorage.setItem("industryToken", data.token);  // save login session
+      // alert("Login successful!");
       navigate("/industry-dashboard");
     } else {
-      alert(t("enterEmailPassword") ?? "Please enter email and password");
+      alert(data.message || "Invalid login");
     }
-  };
+  } catch (error) {
+    alert("Error connecting to server");
+  }
+};
 
   return (
     <div className="auth-container">

@@ -23,8 +23,8 @@ function App() {
       <Route path="/login-selection" element={<Loginselection />} />
       <Route path="/farmer-signin" element={<Farmersignin />} />
       <Route path="/farmer-signup" element={<Farmersignup />} />
-      <Route path="/Industry-signin" element={<Industrysignin />} />
-      <Route path="/Industry-signup" element={<Industrysignup />} />
+      <Route path="/industry-signin" element={<Industrysignin />} />
+      <Route path="/industry-signup" element={<Industrysignup />} />
       <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
       <Route path="/industry-dashboard" element={<IndustryDashboard />} />
       <Route path="/add-crop-residue" element={<AddCropResidue />} />

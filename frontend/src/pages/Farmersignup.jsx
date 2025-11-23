@@ -18,33 +18,61 @@ function Farmersignup() {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { name, email, password, confirmPassword } = form;
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const { name, email, password, confirmPassword } = form;
 
-    if (!name || !email || !password || !confirmPassword) {
-      alert(t("fillAllFields") ?? "Please fill in all fields");
-      return;
-    }
+  //   if (!name || !email || !password || !confirmPassword) {
+  //     alert(t("fillAllFields") ?? "Please fill in all fields");
+  //     return;
+  //   }
 
-    if (password !== confirmPassword) {
-      alert(t("passwordsNotMatch") ?? "Passwords do not match");
-      return;
-    }
+  //   if (password !== confirmPassword) {
+  //     alert(t("passwordsNotMatch") ?? "Passwords do not match");
+  //     return;
+  //   }
 
-    if (password.length < 6) {
-      alert(
-        t("passwordLength") ?? "Password must be at least 6 characters long"
-      );
-      return;
-    }
+  //   if (password.length < 6) {
+  //     alert(
+  //       t("passwordLength") ?? "Password must be at least 6 characters long"
+  //     );
+  //     return;
+  //   }
 
-    alert(
-      t("accountCreated") ??
-        "Account created successfully! Please sign in."
-    );
-    navigate("/farmer-signin");
-  };
+  //   alert(
+  //     t("accountCreated") ??
+  //       "Account created successfully! Please sign in."
+  //   );
+  //   navigate("/farmer-signin");
+  // };
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (form.password !== form.confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  const response = await fetch("http://localhost:5000/api/farmer/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: form.name,
+      email: form.email,
+      password: form.password,
+    }),
+  });
+
+  const data = await response.json();
+
+  if (response.ok) {
+    // alert("Signup successful!");
+    navigate("/farmer-dashboard");
+  } else {
+    alert(data.message);
+  }
+};
 
   return (
     <div className="auth-container">

@@ -11,16 +11,37 @@ function Farmersignin() {
 
   const { t, language, setLanguage } = useLanguage();       // ✅ added
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    if (!email || !password) {
-      alert(t("enterEmailPassword") ?? "Please enter both email and password");
-      return;
-    }
+  //   if (!email || !password) {
+  //     alert(t("enterEmailPassword") ?? "Please enter both email and password");
+  //     return;
+  //   }
 
+  //   navigate("/farmer-dashboard");
+  // };
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const response = await fetch("http://localhost:5000/api/farmer/signin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+  });
+
+  const data = await response.json();
+
+  if (response.ok) {
+    localStorage.setItem("token", data.token);
+    // alert("Login successful!");
     navigate("/farmer-dashboard");
-  };
+  } else {
+    alert(data.message);
+  }
+};
+
 
   return (
     <div className="auth-container">

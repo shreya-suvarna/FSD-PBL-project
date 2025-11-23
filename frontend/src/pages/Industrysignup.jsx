@@ -22,29 +22,65 @@ function Industrysignup() {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    // Validations
-    if (form.password !== form.confirmPassword) {
-      alert(t("passwordsNotMatch") ?? "Passwords do not match");
-      return;
+  //   // Validations
+  //   if (form.password !== form.confirmPassword) {
+  //     alert(t("passwordsNotMatch") ?? "Passwords do not match");
+  //     return;
+  //   }
+
+  //   if (form.password.length < 6) {
+  //     alert(t("passwordLength") ?? "Password must be at least 6 characters");
+  //     return;
+  //   }
+
+  //   const phoneRegex = /^[0-9]{10}$/;
+  //   if (!phoneRegex.test(form.phone)) {
+  //     alert(t("enterValidPhone") ?? "Enter a valid 10-digit phone number");
+  //     return;
+  //   }
+
+  //   alert(t("accountCreated") ?? "Account created successfully!");
+  //   navigate("/industry/signin");
+  // };
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (form.password !== form.confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:5000/api/industry/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        companyName: form.companyName,
+        email: form.email,
+        phone: form.phone,
+        address: form.address,
+        password: form.password
+      })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      // alert("Account created successfully!");
+      navigate("/industry-dashboard");
+    } else {
+      alert(data.message || "Signup failed");
     }
-
-    if (form.password.length < 6) {
-      alert(t("passwordLength") ?? "Password must be at least 6 characters");
-      return;
-    }
-
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(form.phone)) {
-      alert(t("enterValidPhone") ?? "Enter a valid 10-digit phone number");
-      return;
-    }
-
-    alert(t("accountCreated") ?? "Account created successfully!");
-    navigate("/industry/signin");
-  };
+  } catch (error) {
+    alert("Error connecting to server");
+  }
+};
 
   return (
     <div className="auth-container">
