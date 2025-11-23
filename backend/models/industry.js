@@ -23,6 +23,9 @@
 
 // module.exports = mongoose.model("Industry", industrySchema);
 
+
+//backend/models/industry.js
+
 const mongoose = require("mongoose");
 
 const industrySchema = new mongoose.Schema({
