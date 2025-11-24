@@ -1,3 +1,5 @@
+//frontend/src/pages/Farmersignin.jsx
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Auth.css";
@@ -36,6 +38,8 @@ function Farmersignin() {
   if (response.ok) {
     localStorage.setItem("token", data.token);
     // alert("Login successful!");
+      localStorage.setItem("farmerId", data.farmer._id); // store farmerId
+  localStorage.setItem("farmerName", data.farmer.name);
     navigate("/farmer-dashboard");
   } else {
     alert(data.message);

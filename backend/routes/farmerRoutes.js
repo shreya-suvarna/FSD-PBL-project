@@ -1,4 +1,6 @@
-// import express from "express";
+//backend/routes/cropResidueRoutes.js
+
+
 const express = require("express");
 // import { farmerSignup, farmerSignin } from "../controllers/farmerController.js";
 const { farmerSignup, farmerSignin } = require("../controllers/farmerController.js");

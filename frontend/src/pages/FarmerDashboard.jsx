@@ -63,6 +63,14 @@ function FarmerDashboard() {
             <span className="card-icon">🏛️</span>
             <span className="card-text">{t("govt_schemes")}</span>
           </div>
+
+          <div
+            className="dashboard-card"
+            onClick={() => navigate("/uploaded-list")}
+          >
+            {/* <span className="card-icon">🏛️</span> */}
+            <span className="card-text">{t("My uploads")}</span>
+          </div>
         </div>
 
         <div className="illustration-area">

@@ -1,5 +1,9 @@
+//frontend/src/pages/Alerts.jsx
+
 import React, { useState, useEffect } from "react";
 import "../styles/Alerts.css";
+  import { addAlert } from "../utils/alertHelper";
+
 
 import { useLanguage } from "../context/LanguageContext"; // ✅ added
 
@@ -25,6 +29,25 @@ function Alerts() {
     setAlerts(updated);
     localStorage.setItem("alerts", JSON.stringify(updated));
   };
+
+const updateStatus = async (bookingId, status) => {
+  await axios.put(`/api/bookings/${bookingId}/status`, { status });
+
+  if (status === "Accepted") {
+    addAlert(
+      "Booking Accepted",
+      "You have accepted a booking. The industry will be notified."
+    );
+  } else {
+    addAlert(
+      "Booking Rejected",
+      "You have rejected a booking request."
+    );
+  }
+
+  loadBookings();
+};
+
 
   return (
     <div className="alerts-container">

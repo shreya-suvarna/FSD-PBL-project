@@ -1,3 +1,6 @@
+//frontend/src/pages/Payments.jsx
+
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Payments.css";

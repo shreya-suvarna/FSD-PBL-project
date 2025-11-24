@@ -1,3 +1,6 @@
+//frontend/src/pages/Industrysignin.jsx
+
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/IndustryAuth.css";
@@ -48,6 +51,8 @@ function Industrysignin() {
     if (res.ok) {
       localStorage.setItem("industryToken", data.token);  // save login session
       // alert("Login successful!");
+      localStorage.setItem("industryId", data.industry._id);
+  localStorage.setItem("industryEmail", data.industry.email || "");
       navigate("/industry-dashboard");
     } else {
       alert(data.message || "Invalid login");

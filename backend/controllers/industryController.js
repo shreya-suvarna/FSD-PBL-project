@@ -1,3 +1,6 @@
+//backend/controllers/industryController.js
+
+
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Industry = require("../models/industry");
@@ -52,7 +55,13 @@ const industrySignin = async (req, res) => {
       { expiresIn: "5h" }
     );
 
-    res.json({ message: "Login successful!", token });
+    // res.json({ message: "Login successful!", token });
+     res.json({
+  message: "Login successful!",
+  token,
+  industry: { _id: user._id, companyName: user.companyName, email: user.email }
+});
+
   } catch (error) {
     res.status(500).json({ error: "Signin failed" });
   }

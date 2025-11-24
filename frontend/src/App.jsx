@@ -15,6 +15,10 @@ import Payments from "./pages/Payments";
 import GovernmentSchemes from "./pages/GovernmentSchemes";
 import SearchResidue from "./pages/SearchResidue";
 import PreBook from "./pages/PreBooks";
+import BookResidue from "./pages/BookResidue";
+import FarmerBookings from "./pages/FarmerBookings";
+import IndustryOrders from "./pages/IndustryOrders";
+import Uploadedlist from "./pages/Uploadedlist";
 
 function App() {
   return (
@@ -34,6 +38,12 @@ function App() {
       <Route path="/government-schemes" element={<GovernmentSchemes />} />
       <Route path="/search-residue" element={<SearchResidue/>}/>
       <Route path="/pre-book" element={<PreBook/>}/>
+      <Route path="/book-residue/:id" element={<BookResidue/>}/>
+      <Route path="/farmer-bookings" element={<FarmerBookings/>}/>
+      <Route path="/industry-orders" element={<IndustryOrders/>}/>
+<Route path="/uploaded-list" element={<Uploadedlist />} />
+
+
 
       </Routes>
     // <p>hello</p>
