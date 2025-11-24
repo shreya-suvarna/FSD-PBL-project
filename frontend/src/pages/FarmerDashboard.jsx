@@ -48,7 +48,7 @@ function FarmerDashboard() {
             <span className="card-icon">🔔</span>
             <span className="card-text">{t("sales")}</span>
           </div>
-          <div className="dashboard-card">
+          <div className="dashboard-card" onClick={() => navigate("/alerts")}>
             <span className="card-icon">📢</span>
             <span className="card-text">{t("alerts")}</span>
           </div>
