@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Sales.css";
 
+import { useLanguage } from "../context/LanguageContext"; // ✅ added
+
 function Sales() {
   const navigate = useNavigate();
+  const { t } = useLanguage(); // ✅ added
 
   const [sales, setSales] = useState([]);
   const [form, setForm] = useState({
@@ -15,7 +18,6 @@ function Sales() {
   });
   const [previewImages, setPreviewImages] = useState([]);
 
-  // Load sales from localStorage
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("sales") || "[]");
     setSales(stored);
@@ -35,7 +37,7 @@ function Sales() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.cropName || !form.residueType || !form.quantity || !form.price) {
-      alert("Please fill all required fields!");
+      alert(t("fillAllFields") ?? "Please fill all required fields!");
       return;
     }
 
@@ -49,7 +51,6 @@ function Sales() {
     localStorage.setItem("sales", JSON.stringify(updatedSales));
     setSales(updatedSales);
 
-    // Reset form
     setForm({ cropName: "", residueType: "", quantity: "", price: "", images: [] });
     setPreviewImages([]);
   };
@@ -62,57 +63,68 @@ function Sales() {
 
   return (
     <div className="sales-container">
-      <h1>Crop Residue Sales</h1>
+      <h1>{t("cropResidueSales") ?? "Crop Residue Sales"}</h1>
 
-      {/* Form to post sale */}
+      {/* Form */}
       <div className="sale-form-card">
-        <h2>Post a Sale</h2>
+        <h2>{t("postSale") ?? "Post a Sale"}</h2>
         <form onSubmit={handleSubmit}>
-          <label>Crop Name</label>
+          <label>{t("cropName") ?? "Crop Name"}</label>
           <input id="cropName" value={form.cropName} onChange={handleChange} required />
 
-          <label>Residue Type</label>
+          <label>{t("residueType") ?? "Residue Type"}</label>
           <input id="residueType" value={form.residueType} onChange={handleChange} required />
 
-          <label>Quantity (kg)</label>
+          <label>{t("quantityKg") ?? "Quantity (kg)"}</label>
           <input type="number" id="quantity" value={form.quantity} onChange={handleChange} required />
 
-          <label>Price per kg</label>
+          <label>{t("pricePerKg") ?? "Price per kg"}</label>
           <input type="number" id="price" value={form.price} onChange={handleChange} required />
 
-          <label>Images</label>
+          <label>{t("images") ?? "Images"}</label>
           <input type="file" multiple accept="image/*" onChange={handleFileChange} />
+
           <div className="preview-images">
             {previewImages.map((src, i) => (
               <img key={i} src={src} alt={`preview-${i}`} />
             ))}
           </div>
 
-          <button type="submit">Post Sale</button>
+          <button type="submit">{t("postSaleBtn") ?? "Post Sale"}</button>
         </form>
       </div>
 
-      {/* List of posted sales */}
+      {/* Sales List */}
       <div className="sales-list">
-        <h2>My Listings</h2>
-        {sales.length === 0 && <p>No sales posted yet.</p>}
+        <h2>{t("myListings") ?? "My Listings"}</h2>
+        {sales.length === 0 && <p>{t("noSalesYet") ?? "No sales posted yet."}</p>}
+
         {sales.map((sale) => (
           <div key={sale.id} className="sale-card">
             <p>
               <strong>{sale.cropName}</strong> - {sale.residueType}
             </p>
-            <p>Quantity: {sale.quantity} kg | Price: ₹{sale.price}/kg</p>
+            <p>
+              {t("quantity") ?? "Quantity"}: {sale.quantity} kg |{" "}
+              {t("price") ?? "Price"}: ₹{sale.price}/kg
+            </p>
+
             <div className="sale-images">
               {sale.images.map((img, i) => (
                 <img key={i} src={img} alt="sale-img" />
               ))}
             </div>
-            <button onClick={() => deleteSale(sale.id)}>Delete</button>
+
+            <button onClick={() => deleteSale(sale.id)}>
+              {t("delete") ?? "Delete"}
+            </button>
           </div>
         ))}
       </div>
 
-      <button onClick={() => navigate("/farmer-dashboard")}>Back to Dashboard</button>
+      <button onClick={() => navigate("/farmer-dashboard")}>
+        {t("backToDashboard") ?? "Back to Dashboard"}
+      </button>
     </div>
   );
 }

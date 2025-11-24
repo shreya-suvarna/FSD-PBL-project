@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useLanguage } from "../context/LanguageContext"; // added for translations
 
 export default function Uploadedlist() {
+  const { t } = useLanguage(); // added for translations
+
   const farmerId = localStorage.getItem("farmerId");
   const [residues, setResidues] = useState([]);
   const [notifications, setNotifications] = useState([]);
@@ -16,7 +19,7 @@ export default function Uploadedlist() {
   }, []);
 
   const deleteResidue = async (id) => {
-    if (!window.confirm("Delete this residue?")) return;
+    if (!window.confirm(t("confirmDelete") ?? "Delete this residue?")) return;
 
     await fetch(`http://localhost:5000/api/residue/${id}`, { method: "DELETE" });
     setResidues(residues.filter(r => r._id !== id));
@@ -24,23 +27,23 @@ export default function Uploadedlist() {
 
   return (
     <div className="dashboard">
-      <h1>Farmer Dashboard</h1>
+      <h1>{t("farmerDashboardTitle") ?? "Farmer Dashboard"}</h1>
 
-      <h2>Your Uploaded Residues</h2>
-      {residues.length === 0 ? <p>No residues uploaded yet.</p> : null}
+      <h2>{t("yourUploadedResidues") ?? "Your Uploaded Residues"}</h2>
+      {residues.length === 0 ? <p>{t("noResiduesUploaded") ?? "No residues uploaded yet."}</p> : null}
 
       <div className="residue-list">
         {residues.map((r) => (
           <div key={r._id} className="residue-card">
             <h3>{r.cropName}</h3>
-            <p>Type: {r.residueType}</p>
-            <p>Quantity: {r.quantity} kg</p>
-            <button onClick={() => deleteResidue(r._id)}>Delete</button>
+            <p>{t("typeLabel") ?? "Type:"} {r.residueType}</p>
+            <p>{t("quantityLabel") ?? "Quantity:"} {r.quantity} kg</p>
+            <button onClick={() => deleteResidue(r._id)}>{t("delete") ?? "Delete"}</button>
           </div>
         ))}
       </div>
 
-      <h2>Notifications</h2>
+      <h2>{t("notificationsTitle") ?? "Notifications"}</h2>
       <ul>
         {notifications.map((n) => (
           <li key={n._id}>{n.message}</li>

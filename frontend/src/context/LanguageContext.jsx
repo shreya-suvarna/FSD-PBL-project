@@ -266,10 +266,90 @@ received: "Received",
 myDashboard: "My Dashboard",
 logout: "Logout",
 
+searchCropResidues: "Search Crop Residues",
+
+cropOption: "Crop",
+paddy: "Paddy",
+wheat: "Wheat",
+rice: "Rice",
+maize: "Maize",
+
+residueOption: "Residue",
+straw: "Straw",
+husk: "Husk",
+leaf: "Leaf",
+
+locationPlaceholderShort: "Location",
+minQtyPlaceholder: "Min Qty",
+
+search: "Search",
+noResiduesFound: "No residues found.",
+
+typeLabel: "Type",
+quantityLabel: "Quantity",
+locationLabel: "Location",
+uploaderLabel: "Uploader",
+kg: "kg",
+
+residueImageAlt: "residue",
+bookNow: "Book Now",
+
+addCropResidue: "Add Crop Residue",
+
+cropName: "Crop Name",
+select: "Select",
+paddy: "Paddy",
+wheat: "Wheat",
+rice: "Rice",
+maize: "Maize",
+coconut: "Coconut",
+arecanut: "Arecanut",
+
+residueType: "Residue Type",
+straw: "Straw",
+husk: "Husk",
+shell: "Shell",
+leaf: "Leaf",
+
+quantityKg: "Quantity (kg)",
+
+location: "Location",
+
+uploaderName: "Uploader Name",
+uploaderContact: "Uploader Contact",
+
+uploadImages: "Upload Images",
+previewAlt: "preview",
+
+upload: "Upload",
+
+mustLoginFarmer: "You must be logged in as a farmer to upload residue.",
 
 
+cropResidueSales: "Crop Residue Sales",
+postSale: "Post a Sale",
+cropName: "Crop Name",
+residueType: "Residue Type",
+quantityKg: "Quantity (kg)",
+pricePerKg: "Price per kg",
+images: "Images",
+postSaleBtn: "Post Sale",
+myListings: "My Listings",
+noSalesYet: "No sales posted yet.",
+quantity: "Quantity",
+price: "Price",
+delete: "Delete",
+fillAllFields: "Please fill all required fields!",
+backToDashboard: "Back to Dashboard",
 
-
+farmerDashboardTitle: "Farmer Dashboard",
+yourUploadedResidues: "Your Uploaded Residues",
+noResiduesUploaded: "No residues uploaded yet.",
+typeLabel: "Type:",
+quantityLabel: "Quantity:",
+delete: "Delete",
+notificationsTitle: "Notifications",
+confirmDelete: "Delete this residue?",
 
 
 
@@ -543,9 +623,89 @@ markReceived: "ಸ್ವೀಕರಿಸಲಾಗಿದೆ ಎಂದು ಗುರ
 received: "ಸ್ವೀಕರಿಸಲಾಗಿದೆ",
 myDashboard: "ನನ್ನ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
 logout: "ಲಾಗ್ ಔಟ್",
+searchCropResidues: "ಬೆಳೆ ಅವಶೇಷಗಳನ್ನು ಹುಡುಕಿ",
 
+cropOption: "ಬೆಳೆ",
+paddy: "ಅಕ್ಕಿ",
+wheat: "ಗೋಧಿ",
+rice: "ಅನ್ನ",
+maize: "ಮೆಕ್ಕೆಜೋಳ",
 
+residueOption: "ಅವಶೇಷ",
+straw: "ತುಳ್ಳು",
+husk: "ಹುಲ್ಲು",
+leaf: "ಎಲೆ",
 
+locationPlaceholderShort: "ಸ್ಥಳ",
+minQtyPlaceholder: "ಕನಿಷ್ಠ ಪ್ರಮಾಣ",
+
+search: "ಹುಡುಕು",
+noResiduesFound: "ಯಾವುದೇ ಅವಶೇಷಗಳು ದೊರಕಲಿಲ್ಲ.",
+
+typeLabel: "ಪ್ರಕಾರ",
+quantityLabel: "ಪ್ರಮಾಣ",
+locationLabel: "ಸ್ಥಳ",
+uploaderLabel: "ಅಪ್‌ಲೋಡರ್",
+kg: "ಕೆಜಿ",
+
+residueImageAlt: "ಅವಶೇಷ",
+bookNow: "ಬುಕ್ ಮಾಡಿ",
+
+addCropResidue: "ಬೆಳೆ ಅವಶೇಷ ಸೇರಿಸಿ",
+
+cropName: "ಬೆಳೆ ಹೆಸರು",
+select: "ಆಯ್ಕೆ ಮಾಡಿ",
+paddy: "ಅಕ್ಕಿ",
+wheat: "ಗೋಧಿ",
+rice: "ಅನ್ನ",
+maize: "ಮೆಕ್ಕೆಜೋಳ",
+coconut: "ತೆಂಗಿನಕಾಯಿ",
+arecanut: "ಅಡಿಕೆ",
+
+residueType: "ಅವಶೇಷದ ಪ್ರಕಾರ",
+straw: "ತುಳ್ಳು",
+husk: "ಹುಲ್ಲು",
+shell: "ಚಿಪ್ಪು",
+leaf: "ಎಲೆ",
+
+quantityKg: "ಪ್ರಮಾಣ (ಕೆಜಿ)",
+
+location: "ಸ್ಥಳ",
+
+uploaderName: "ಅಪ್‌ಲೋಡರ್ ಹೆಸರು",
+uploaderContact: "ಅಪ್‌ಲೋಡರ್ ಸಂಪರ್ಕ",
+
+uploadImages: "ಚಿತ್ರಗಳನ್ನು ಅಪ್‌ಲಾಗ್ಡ್ ಮಾಡಿ",
+previewAlt: "ಪ್ರೀವ್ಯೂ",
+
+upload: "ಅಪ್‌ಲೋಡ್",
+
+mustLoginFarmer: "ಅವಶೇಷಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಕೃಷಿಕರಾಗಿ ಲಾಗಿನ್ ಆಗಿರಬೇಕು.",
+
+cropResidueSales: "ಬೆಳೆ ಅವಶೇಷ ಮಾರಾಟ",
+postSale: "ಮಾರಾಟ ಪ್ರಕಟಿಸಿ",
+cropName: "ಬೆಳೆ ಹೆಸರು",
+residueType: "ಅವಶೇಷದ ಪ್ರಕಾರ",
+quantityKg: "ಪ್ರಮಾಣ (ಕೆಜಿ)",
+pricePerKg: "ಕೆಜಿ ಗೆ ಬೆಲೆ",
+images: "ಚಿತ್ರಗಳು",
+postSaleBtn: "ಮಾರಾಟ ಪ್ರಕಟಿಸಿ",
+myListings: "ನನ್ನ ಪಟ್ಟಿಗಳು",
+noSalesYet: "ಇನ್ನೂ ಯಾವುದೇ ಮಾರಾಟ ಇಲ್ಲ.",
+quantity: "ಪ್ರಮಾಣ",
+price: "ಬೆಲೆ",
+delete: "ಅಳಿಸಿ",
+fillAllFields: "ದಯವಿಟ್ಟು ಅಗತ್ಯವಾದ ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ!",
+backToDashboard: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ಗೆ ಹಿಂತಿರುಗಿ",
+
+farmerDashboardTitle: "ರೈತ ಡ್ಯಾಶ್ಬೋರ್ಡ್",
+yourUploadedResidues: "ನೀವು ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ಅವಶೇಷಗಳು",
+noResiduesUploaded: "ಯಾವುದೇ ಅವಶೇಷಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗಿಲ್ಲ.",
+typeLabel: "ಪ್ರಕಾರ:",
+quantityLabel: "ಪ್ರಮಾಣ:",
+delete: "ಅಳಿಸು",
+notificationsTitle: "ಅಧಿಸೂಚನೆಗಳು",
+confirmDelete: "ಈ ಅವಶೇಷವನ್ನು ಅಳಿಸಬೇಕೆ?",
 
   },
 };

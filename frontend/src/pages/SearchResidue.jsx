@@ -1,15 +1,16 @@
 // frontend/src/pages/SearchResidue.jsx
 
-
-
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import "../styles/SearchResidue.css";
 
+import { useLanguage } from "../context/LanguageContext"; // added for translations
+
 export default function SearchResidue() {
-    const navigate = useNavigate();
-  
+  const navigate = useNavigate();
+  const { t } = useLanguage(); // added for translations
+
   const [residues, setResidues] = useState([]);
   const [filtered, setFiltered] = useState([]);
 
@@ -47,61 +48,70 @@ export default function SearchResidue() {
 
   return (
     <div className="search-container">
-      <h1>Search Crop Residues</h1>
+      <h1>{t("searchCropResidues") ?? "Search Crop Residues"}</h1>
 
       <div className="filters">
         <select id="cropName" onChange={handleChange}>
-          <option value="">Crop</option>
-          <option value="Paddy">Paddy</option>
-          <option value="Wheat">Wheat</option>
-          <option value="Rice">Rice</option>
-          <option value="Maize">Maize</option>
+          <option value="">{t("cropOption") ?? "Crop"}</option>
+          <option value="Paddy">{t("paddy") ?? "Paddy"}</option>
+          <option value="Wheat">{t("wheat") ?? "Wheat"}</option>
+          <option value="Rice">{t("rice") ?? "Rice"}</option>
+          <option value="Maize">{t("maize") ?? "Maize"}</option>
         </select>
 
         <select id="residueType" onChange={handleChange}>
-          <option value="">Residue</option>
-          <option value="Straw">Straw</option>
-          <option value="Husk">Husk</option>
-          <option value="Leaf">Leaf</option>
+          <option value="">{t("residueOption") ?? "Residue"}</option>
+          <option value="Straw">{t("straw") ?? "Straw"}</option>
+          <option value="Husk">{t("husk") ?? "Husk"}</option>
+          <option value="Leaf">{t("leaf") ?? "Leaf"}</option>
         </select>
 
-        <input id="location" type="text" placeholder="Location" onChange={handleChange} />
+        <input
+          id="location"
+          type="text"
+          placeholder={t("locationPlaceholderShort") ?? "Location"}
+          onChange={handleChange}
+        />
 
         <input
           id="minQuantity"
           type="number"
-          placeholder="Min Qty"
+          placeholder={t("minQtyPlaceholder") ?? "Min Qty"}
           onChange={handleChange}
         />
 
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch}>{t("search") ?? "Search"}</button>
       </div>
 
       <div className="residue-list">
         {filtered.length === 0 ? (
-          <p>No residues found.</p>
+          <p>{t("noResiduesFound") ?? "No residues found."}</p>
         ) : (
           filtered.map((r) => (
             <div className="residue-card" key={r._id}>
               <h3>{r.cropName}</h3>
-              <p>Type: {r.residueType}</p>
-              <p>Quantity: {r.quantity} kg</p>
-              <p>Location: {r.location}</p>
-              <p>Uploader: {r.uploaderName}</p>
+              <p>
+                {t("typeLabel") ?? "Type"}: {r.residueType}
+              </p>
+              <p>
+                {t("quantityLabel") ?? "Quantity"}: {r.quantity} {t("kg") ?? "kg"}
+              </p>
+              <p>
+                {t("locationLabel") ?? "Location"}: {r.location}
+              </p>
+              <p>
+                {t("uploaderLabel") ?? "Uploader"}: {r.uploaderName}
+              </p>
 
               <div className="image-row">
                 {r.images.map((img, idx) => (
-                  <img key={idx} src={img} alt="residue" />
+                  <img key={idx} src={img} alt={t("residueImageAlt") ?? "residue"} />
                 ))}
               </div>
 
-               <div style={{ marginTop: 8 }}>
-                 {/* <Link to="/book-residue" className="login-btn">
-                            {/* {t("login") ?? "Login"}   </Link>
-                <button onClick={() => navigate(`/book-residue/${r._id}`)}>Book Now</button> */}
-
+              <div style={{ marginTop: 8 }}>
                 <Link to={`/book-residue/${r._id}`} className="login-btn">
-                  Book Now
+                  {t("bookNow") ?? "Book Now"}
                 </Link>
               </div>
             </div>
