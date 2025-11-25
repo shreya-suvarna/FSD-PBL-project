@@ -19,6 +19,8 @@ import BookResidue from "./pages/BookResidue";
 import FarmerBookings from "./pages/FarmerBookings";
 import IndustryOrders from "./pages/IndustryOrders";
 import Uploadedlist from "./pages/Uploadedlist";
+import Profile from "./pages/Profile";
+import IndustryProfile from "./pages/IndustryProfile";
 
 function App() {
   return (
@@ -41,7 +43,9 @@ function App() {
       <Route path="/book-residue/:id" element={<BookResidue/>}/>
       <Route path="/farmer-bookings" element={<FarmerBookings/>}/>
       <Route path="/industry-orders" element={<IndustryOrders/>}/>
-<Route path="/uploaded-list" element={<Uploadedlist />} />
+      <Route path="/uploaded-list" element={<Uploadedlist />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/industry-profile" element={<IndustryProfile />} />
 
 
 

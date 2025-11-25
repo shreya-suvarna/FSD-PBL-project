@@ -147,3 +147,25 @@ body {
     max-width: 100%;
     height: auto;
 }
+/* Profile Button in Dashboard Header */
+.auth-controls .profile-btn {
+    padding: 8px 18px;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.auth-controls .profile-btn:hover {
+    background-color: #2b5b16; /* slightly darker on hover */
+}
+
+/* Optional: spacing with logout button */
+.auth-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between profile and logout */
+}

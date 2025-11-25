@@ -26,6 +26,7 @@ function IndustryDashboard() {
         </nav>
 
         <div className="auth-controls">
+           <button className="profile-btn" onClick={() => navigate("/industry-profile")}>👤Profile</button>
           <div className="lang-dropdown">
             <select
               value={language}

@@ -75,6 +75,16 @@ function Industrysignup() {
     const data = await res.json();
 
     if (res.ok) {
+      const industryData = {
+    companyName: form.companyName,
+    email: form.email,
+    phone: form.phone,
+    address: form.address,
+    profileImage: "" // default empty
+  };
+  localStorage.setItem("industryProfile", JSON.stringify(industryData));
+      
+      
       // alert("Account created successfully!");
       navigate("/industry-dashboard");
     } else {

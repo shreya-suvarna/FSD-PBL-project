@@ -70,6 +70,16 @@ function Farmersignup() {
   const data = await response.json();
 
   if (response.ok) {
+   localStorage.setItem(
+    "user",
+    JSON.stringify({
+      name: form.name,
+      email: form.email,
+      phone: "", 
+      location: "", 
+      profileImage: ""
+    })
+  );
     // alert("Signup successful!");
     navigate("/farmer-dashboard");
   } else {

@@ -5,6 +5,7 @@ import "../styles/FarmerDashboard.css";
 import { useLanguage } from "../context/LanguageContext";
 
 
+
 function FarmerDashboard() {
    const { t, language, setLanguage } = useLanguage();
   const navigate = useNavigate(); // useNavigate hook
@@ -22,6 +23,7 @@ function FarmerDashboard() {
         </nav>
 
         <div className="auth-controls">
+          <button className="profile-btn" onClick={() => navigate("/profile")}>👤My Profile</button>
           <div className="lang-dropdown">
             <select
               value={language}
