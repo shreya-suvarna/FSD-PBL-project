@@ -21,6 +21,7 @@ import IndustryOrders from "./pages/IndustryOrders";
 import Uploadedlist from "./pages/Uploadedlist";
 import Profile from "./pages/Profile";
 import IndustryProfile from "./pages/IndustryProfile";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
       <Route path="/uploaded-list" element={<Uploadedlist />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/industry-profile" element={<IndustryProfile />} />
+      <Route path="/about-us" element={<AboutUs />} />
 
 
 

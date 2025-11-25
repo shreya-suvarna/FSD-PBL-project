@@ -22,7 +22,7 @@ function Welcome() {
           <Link to="/login-selection" className="nav-link">
             {t("dashboard_title")}
           </Link>
-          <a href="#" className="nav-link">{t("aboutUs") ?? "About Us"}</a>
+          <Link to="/about-us" className="nav-link">{t("aboutUs") ?? "About Us"}</Link>
           <a href="#" className="nav-link">{t("alerts")}</a>
           <a href="#" className="nav-link">{t("settings") ?? "Settings"}</a>
         </nav>
