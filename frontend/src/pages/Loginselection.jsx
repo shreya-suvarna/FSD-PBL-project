@@ -13,7 +13,7 @@ export default function LoginSelection() {
         <nav className="nav-links">
           <Link to="/" className="nav-link">{t("home")}</Link>
           <Link to="/about-us" className="nav-link">{t("aboutUs") ?? "About Us"}</Link>
-          <a href="#" className="nav-link">{t("contact") ?? "Contact"}</a>
+          <Link to="/contact" className="nav-link">{t("contact") ?? "Contact"}</Link>
         </nav>
 
         <div className="auth-controls">

@@ -22,6 +22,7 @@ import Uploadedlist from "./pages/Uploadedlist";
 import Profile from "./pages/Profile";
 import IndustryProfile from "./pages/IndustryProfile";
 import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/industry-profile" element={<IndustryProfile />} />
       <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/contact" element={<Contact />} />
 
 
 
